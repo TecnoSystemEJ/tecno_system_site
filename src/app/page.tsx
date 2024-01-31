@@ -15,7 +15,7 @@ const page = async () => {
 
       <div className="flex fle-row justify-between">
         <Button name="Entre em contato" styles="primary" href="/" />
-        <Button name="Saiba mais" styles="secondary" href="/" />p
+        <Button name="Saiba mais" styles="secondary" href="/" />
       </div>
     </div>
   );
