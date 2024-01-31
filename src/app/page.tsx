@@ -10,11 +10,12 @@ const page = async () => {
   const home = await client.getSingle("home");
 
   return (
-    <div className="font-secondary">
+    <div>
       <PrismicRichText field={home.data.text_1} />
+
       <div className="flex fle-row justify-between">
         <Button name="Entre em contato" styles="primary" href="/" />
-        <Button name="Saiba mais" styles="secondary" href="/" />
+        <Button name="Saiba mais" styles="secondary" href="/" />p
       </div>
     </div>
   );

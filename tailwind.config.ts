@@ -20,8 +20,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        primary: ["Righteous", "sans-serif"],
-        secondary: ["Inter", "sans-serif"],
+        primary: ["var(--font-righteous)"],
+        secondary: ["var(--font-inter)"],
       },
     },
   },
