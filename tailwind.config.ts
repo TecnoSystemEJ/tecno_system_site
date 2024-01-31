@@ -18,6 +18,7 @@ const config: Config = {
           main: "#F3EED9",
           alt: "#F2F2F2",
         },
+        black: "#1E1E1E",
       },
       fontFamily: {
         primary: ["var(--font-righteous)"],

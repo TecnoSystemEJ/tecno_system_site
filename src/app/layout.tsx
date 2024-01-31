@@ -21,7 +21,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-BR" className={`${inter.variable} ${righteous.variable}`}>
+    <html
+      lang="pt-BR"
+      className={`${inter.variable} ${righteous.variable} text-black`}
+    >
       <body>
         <div className="mx-auto container px-5">{children}</div>
       </body>
