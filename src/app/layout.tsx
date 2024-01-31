@@ -1,6 +1,4 @@
-import { PrismicPreview } from "@prismicio/next";
-import { repositoryName } from "@/prismicio";
-import './globals.css';
+import "./globals.css";
 
 export default function RootLayout({
   children,
@@ -9,17 +7,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <head>
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="any"
-          href="https://prismic.io/favicon.ico"
-        />
-      </head>
       <body>
-        {children}
-        <PrismicPreview repositoryName={repositoryName} />
+        <div className="mx-auto container">{children}</div>
       </body>
     </html>
   );
