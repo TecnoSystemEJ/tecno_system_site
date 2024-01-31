@@ -9,7 +9,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body>
-        <div className="mx-auto container">{children}</div>
+        <div className="mx-auto container px-5">{children}</div>
       </body>
     </html>
   );

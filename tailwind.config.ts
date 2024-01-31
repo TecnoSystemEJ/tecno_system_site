@@ -6,6 +6,7 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  purge: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
@@ -13,7 +14,7 @@ const config: Config = {
           main: "#CC2F25",
           alt: "#FF5555",
         },
-        grey: {
+        gray: {
           main: "#F3EED9",
           alt: "#F2F2F2",
         },
