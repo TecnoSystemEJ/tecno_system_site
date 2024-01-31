@@ -11,6 +11,17 @@ type HomeDocumentDataSlicesSlice = never;
  */
 interface HomeDocumentData {
   /**
+   * text_1 field in *home*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.text_1
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text_1: prismic.RichTextField;
+
+  /**
    * Slice Zone field in *home*
    *
    * - **Field Type**: Slice Zone
@@ -22,15 +33,15 @@ interface HomeDocumentData {
   slices: prismic.SliceZone<HomeDocumentDataSlicesSlice>;
 
   /**
-   * text_1 field in *home*
+   * image_1 field in *home*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: home.text_1
+   * - **API ID Path**: home.image_1
    * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   * - **Documentation**: https://prismic.io/docs/field#image
    */
-  text_1: prismic.RichTextField /**
+  image_1: prismic.ImageField<never> /**
    * Meta Description field in *home*
    *
    * - **Field Type**: Text
