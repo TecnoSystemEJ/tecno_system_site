@@ -33,7 +33,7 @@ const settings = {
 
 const Card = () => {
   return (
-    <div className="p-4 m-0 h-92 flex flex-col justify-center bg-gray-alt">
+    <div className="py-4 m-0 h-92 flex flex-col justify-center bg-gray-alt">
       <Slider {...settings}>
         {cards.map((card, index) => {
           return (
