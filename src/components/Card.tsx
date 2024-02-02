@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -7,23 +8,23 @@ import "slick-carousel/slick/slick-theme.css";
 const cards = [
   {
     image: "",
-    title: "back to what I was saying",
-    text: "eu tô de buenas, pegando as muchachas, tequila e limão",
+    title: "Medlembre",
+    text: "the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publish",
   },
   {
     image: "",
-    title: "this could be us",
-    text: "eu tô de buenas, brilhando bastante",
+    title: "Medlembre",
+    text: "the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publish",
   },
   {
     image: "",
-    title: "but you playin'",
-    text: "mais que diamante, e curtindo esse som",
+    title: "Medlembre",
+    text: "the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publish",
   },
 ];
 
 const settings = {
-  dots: false,
+  centerMode: true,
   infinite: false,
   speed: 500,
   slidesToShow: 1,
@@ -32,21 +33,28 @@ const settings = {
 
 const Card = () => {
   return (
-    <div className="m-0 h-72 flex flex-col justify-center bg-gray-alt">
+    <div className="p-4 m-0 h-92 flex flex-col justify-center bg-gray-alt">
       <Slider {...settings}>
         {cards.map((card, index) => {
           return (
             <div
               key={index}
-              className="w-56 h-56 mx-4 p-6 my-20 bg-gray-alt rounded-2xl shadow-xl"
+              className="max-w-80 w-80 h-80 mx-4 p-4 mb-20 bg-gray-alt rounded-2xl shadow-xl"
             >
-              <div className="rounded-2xl">
-                {/*<Image src={} alt="image" height={16} width={44} />*/}
+              <div className="h-28 mb-2 bg-white rounded-xl overflow-hidden">
+                {
+                  <Image
+                    src={`/images/${card.image}`}
+                    alt="image"
+                    height={300}
+                    width={300}
+                  />
+                }
               </div>
-              <h3 className="text-black text-bold font-primary">
+              <h3 className="text-black text-bold font-primary text-lg mb-2">
                 {card.title}
               </h3>
-              <p className="text-black font-secondary">{card.text}</p>
+              <p className="text-black font-secondary text-sm ">{card.text}</p>
             </div>
           );
         })}
