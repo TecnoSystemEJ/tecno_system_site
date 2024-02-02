@@ -15,18 +15,18 @@ const AboutSection = ({ homeData }: Props) => {
   //const textCard2Subtitle = homeData.data.text_card_2_subtitle;
   //console.log(aboutSectionText);
   return (
-    <div className="bg-gray-alt p-4">
-      <h2 className="text-2xl font-primary text-primary-main my-4">
+    <div className="bg-gray-alt ">
+      <h2 className="p-4 text-2xl font-primary text-primary-main my-4">
         TECNOSYSTEM{/*aboutTitle*/}
       </h2>
-      <p className="font-secondary text-black text-xs font-medium mb-8">
+      <p className="px-4 font-secondary text-black text-xs font-medium mb-8">
         COM BASE EM SÃO PAULO, E ESCRITÓRIOS NA ESPANHA E PORTUGAL, TEMOS UMA
         ATUAÇÃO INTERNACIONAL. NOSSA PAIXÃO É TRANSFORMAR NEGÓCIOS POR MEIO DA
         COMUNICAÇÃO, APLICANDO ESTRATÉGIAS INOVADORAS E CONTANDO COM UMA EQUIPE
         ALTAMENTE CAPACITADA, COLABORANDO PARA CRIAR EXPERIÊNCIAS ENVOLVENTES
         QUE IMPULSIONAM O ENGAJAMENTO E A CONVERSÃO.{/*about_p1*/}
       </p>
-      <p className="font-secondary text-black text-xs font-medium">
+      <p className="px-4 font-secondary text-black text-xs font-medium">
         COM BASE EM SÃO PAULO, E ESCRITÓRIOS NA ESPANHA E PORTUGAL, TEMOS UMA
         ATUAÇÃO INTERNACIONAL. NOSSA PAIXÃO É TRANSFORMAR NEGÓCIOS POR MEIO DA
         COMUNICAÇÃO, APLICANDO ESTRATÉGIAS INOVADORAS E CONTANDO COM UMA EQUIPE
