@@ -6,7 +6,8 @@ import { createClient } from "@/prismicio";
 import TestimonialSection from "./components/TestimonialSection";
 import HeaderSection from "./components/HeaderSection";
 import AboutSection from "./components/AboutSection";
-import Depoimentos from "@/components/Depoimentos";
+
+
 
 const page = async () => {
   const client = createClient();
@@ -17,12 +18,6 @@ const page = async () => {
       <HeaderSection homeData={home} />
       <AboutSection homeData={home} />
       <TestimonialSection homeData={home} />
-      <div>
-        <Depoimentos/>
-      </div>
-      <div>
-        <Depoimentos/>
-      </div>
     </div>
   );
 };

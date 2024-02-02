@@ -6,7 +6,7 @@ type Props = {
 };
 
 const AboutSection = ({ homeData }: Props) => {
-  return <div>{}</div>;
+  return <div></div>;
 };
 
 export default AboutSection;
