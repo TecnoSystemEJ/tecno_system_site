@@ -7,8 +7,6 @@ import TestimonialSection from "./components/TestimonialSection";
 import HeaderSection from "./components/HeaderSection";
 import AboutSection from "./components/AboutSection";
 
-
-
 const page = async () => {
   const client = createClient();
   const home = await client.getSingle("home");
