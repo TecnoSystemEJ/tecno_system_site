@@ -1,3 +1,4 @@
+import React from "react";
 // Styles
 import "./globals.css";
 import { Inter, Righteous } from "next/font/google";
@@ -23,10 +24,10 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${inter.variable} ${righteous.variable} text-black`}
+      className={`${inter.variable} ${righteous.variable} text-black m-0 p-0 bg-gray-alt`}
     >
       <body>
-        <div className="mx-auto container px-5">{children}</div>
+        <div className="m-0 container p-0">{children}</div>
       </body>
     </html>
   );

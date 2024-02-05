@@ -1,5 +1,8 @@
+// Flow
 import React from "react";
+// Prismic
 import { createClient } from "@/prismicio";
+// Components
 import TestimonialSection from "./components/TestimonialSection";
 import HeaderSection from "./components/HeaderSection";
 import AboutSection from "./components/AboutSection";
@@ -9,7 +12,7 @@ const page = async () => {
   const home = await client.getSingle("home");
 
   return (
-    <div>
+    <div className="p-0 m-0">
       <HeaderSection homeData={home} />
       <AboutSection homeData={home} />
       <TestimonialSection homeData={home} />
