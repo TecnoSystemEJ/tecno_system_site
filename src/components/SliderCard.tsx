@@ -13,8 +13,8 @@ const SliderCard = ({ image, title, text }: Props) => {
       <div className="w-72 h-40 rounded-2xl overflow-hidden">
         <Image src={`/images/${image}`} alt="any" height={300} width={300} />
       </div>
-      <h2 className="text-xl font-primary">{title}</h2>
-      <p className="text-base font-400 font-secondary mb-2">{text}</p>
+      <h2 className="text-xl normal-case font-primary">{title}</h2>
+      <p className="text-base lowercase font-400 font-secondary mb-2">{text}</p>
     </div>
   );
 };

@@ -9,23 +9,23 @@ interface Props {
 
 const AboutSection = ({}: Props) => {
   return (
-    <div className="bg-gray-alt m-0 flex flex-col overflow-x-hidden  ">
-      <h2 className="px-4 text-3xl font-primary text-primary-main my-3 font-400">
-        TECNOSYSTEM
+    <div className="bg-gray-alt uppercase m-0 flex flex-col overflow-x-hidden">
+      <h2 className="text-3xl  font-primary text-primary-main my-3 font-400">
+        tecnosystem
       </h2>
-      <p className="px-4 font-secondary text-black text-sm font-400 mb-8">
-        COM BASE EM SÃO PAULO, E ESCRITÓRIOS NA ESPANHA E PORTUGAL, TEMOS UMA
-        ATUAÇÃO INTERNACIONAL. NOSSA PAIXÃO É TRANSFORMAR NEGÓCIOS POR MEIO DA
-        COMUNICAÇÃO, APLICANDO ESTRATÉGIAS INOVADORAS E CONTANDO COM UMA EQUIPE
-        ALTAMENTE CAPACITADA, COLABORANDO PARA CRIAR EXPERIÊNCIAS ENVOLVENTES
-        QUE IMPULSIONAM O ENGAJAMENTO E A CONVERSÃO.
+      <p className="font-secondary text-black text-sm font-400 mb-8">
+        com base em são paulo, e escritórios na espanha e portugal, temos uma
+        atuação internacional. nossa paixão é transformar negócios por meio da
+        comunicação, aplicando estratégias inovadoras e contando com uma equipe
+        altamente capacitada, colaborando para criar experiências envolventes
+        que impulsionam o engajamento e a conversão.
       </p>
-      <p className="px-4 font-secondary text-black text-sm font-400 mb-8">
-        COM BASE EM SÃO PAULO, E ESCRITÓRIOS NA ESPANHA E PORTUGAL, TEMOS UMA
-        ATUAÇÃO INTERNACIONAL. NOSSA PAIXÃO É TRANSFORMAR NEGÓCIOS POR MEIO DA
-        COMUNICAÇÃO, APLICANDO ESTRATÉGIAS INOVADORAS E CONTANDO COM UMA EQUIPE
-        ALTAMENTE CAPACITADA, COLABORANDO PARA CRIAR EXPERIÊNCIAS ENVOLVENTES
-        QUE IMPULSIONAM O ENGAJAMENTO E A CONVERSÃO.
+      <p className="font-secondary text-black text-sm font-400 mb-8">
+        com base em são paulo, e escritórios na espanha e portugal, temos uma
+        atuação internacional. nossa paixão é transformar negócios por meio da
+        comunicação, aplicando estratégias inovadoras e contando com uma equipe
+        altamente capacitada, colaborando para criar experiências envolventes
+        que impulsionam o engajamento e a conversão.
       </p>
 
       <TextCard
@@ -34,6 +34,21 @@ const AboutSection = ({}: Props) => {
       />
       <SliderComponent
         cards={[
+          {
+            image: "image.png",
+            title: "Medlembre",
+            text: "the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publish",
+          },
+          {
+            image: "image.png",
+            title: "Medlembre",
+            text: "the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publish",
+          },
+          {
+            image: "image.png",
+            title: "Medlembre",
+            text: "the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publish",
+          },
           {
             image: "image.png",
             title: "Medlembre",
