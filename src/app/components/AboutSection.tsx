@@ -29,8 +29,8 @@ const AboutSection = ({}: Props) => {
       </p>
 
       <TextCard
-        title="PROJETOS QUE TEMOS ORGULHO!"
-        subtitle="E VAMOS AJUDAR VOCÊ"
+        title="projetos que temos orgulho!"
+        subtitle="e vamos ajudar você"
       />
       <SliderComponent
         cards={[
