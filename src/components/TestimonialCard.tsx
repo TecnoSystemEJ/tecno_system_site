@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import { IoMdStar, IoMdStarHalf, IoMdStarOutline } from "react-icons/io";
 
-type Props = {
+interface Props {
     name: string;
     score: number;
     key: number;
@@ -13,7 +13,6 @@ const TestimonialCard = ({ name, score }: Props) => {
     const maxScore = 5
     const scoreInt = Math.floor(score)
     const hasHalfStar = score % 1 !== 0
-
     const renderStars = []
 
     for(let i = 1; i <= maxScore; i++){
@@ -41,13 +40,12 @@ const TestimonialCard = ({ name, score }: Props) => {
                     </div>
                     <div className='flex items-start gap-1 h-6 mt-1'>
                         {renderStars}
-                        
                     </div>
                 </div>
 
                 <div>
-                    <h3 className='text-sm text-primary-main uppercase font-semibold'>{name}</h3>
-                    <p className='text-xs font-semibold uppercase'>Com base em São Paulo, e escritórios na Espanha e Portugal, temos uma atuação internacional. Nossa paixão </p>
+                    <h3 className='text-sm text-primary-main uppercase font-primary font-normal'>{name}</h3>
+                    <p className='text-xs font-secondary font-medium uppercase'>Com base em São Paulo, e escritórios na Espanha e Portugal, temos uma atuação internacional. Nossa paixão </p>
                 </div>
             </div>
         </div>
