@@ -12,7 +12,7 @@ const page = async () => {
   const home = await client.getSingle("home");
 
   return (
-    <div>
+    <div className="p-0 m-0 px-4">
       <HeaderSection homeData={home} />
       <AboutSection homeData={home} />
       <TestimonialSection homeData={home} />

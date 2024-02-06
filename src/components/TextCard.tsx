@@ -1,16 +1,15 @@
 import React from "react";
 
-type TextCardProps = {
+interface Props {
   title: string;
   subtitle: string;
-};
+}
 
-const TextCard = ({ title, subtitle }: TextCardProps) => {
+const TextCard = ({ title, subtitle }: Props) => {
   return (
-    <div className="flex items-center mt-12 h-16">
-      <div className="bg-primary-main h-full w-1 mr-3"></div>
-      <div className="flex-grow text-black font-secondary text-sm">
-        <h3 className=" font-bold ">{title}</h3>
+    <div className="uppercase flex mt-12 h-16">
+      <div className="flex items-right text-base justify-center h-16 flex-grow flex-col text-black font-secondary pl-2 border-l-[3px] border-primary-main border-solid">
+        <h3 className="font-bold">{title}</h3>
         <p>{subtitle}</p>
       </div>
     </div>
