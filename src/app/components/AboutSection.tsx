@@ -3,13 +3,13 @@ import { AllDocumentTypes } from "../../../prismicio-types";
 import TextCard from "@/components/TextCard";
 import SliderComponent from "@/components/SliderComponent";
 
-type Props = {
+interface Props {
   homeData: AllDocumentTypes;
-};
+}
 
-const AboutSection = ({ homeData }: Props) => {
+const AboutSection = ({}: Props) => {
   return (
-    <div className="bg-gray-alt m-0">
+    <div className="bg-gray-alt m-0 flex flex-col overflow-x-hidden  ">
       <h2 className="px-4 text-3xl font-primary text-primary-main my-3 font-400">
         TECNOSYSTEM
       </h2>
