@@ -13,6 +13,7 @@ const NavBar = () => {
           width={30}
         />
       </div>
+      
 
       <div className="flex items-center">
         <Image
