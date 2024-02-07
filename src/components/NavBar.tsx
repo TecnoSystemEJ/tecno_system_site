@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const NavBar = () => {
   return (
-    <div className="flex justify-between p-4 bg-gray-50 px-4 py-2 rounded-md font-medium mb-8 rounded-md shadow-lg">
+    <div className="flex justify-between bg-gray-50 px-4 py-2 font-medium mb-8 rounded-md shadow-lg">
       <div className="flex items-center">
         <Image
           src={"/homeicons/logo.svg"}
