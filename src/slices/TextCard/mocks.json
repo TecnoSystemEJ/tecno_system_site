@@ -1,0 +1,30 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"text_card_title",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "red",
+							"type": "Text"
+						}
+					],
+					[
+						"text_card_text",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "declared",
+							"type": "Text"
+						}
+					]
+				]
+			}
+		]
+	}
+]

@@ -2,4 +2,9 @@
 
 import dynamic from "next/dynamic";
 
-export const components = {};
+export const components = {
+  carousel_card: dynamic(() => import("./CarouselCard")),
+  map: dynamic(() => import("./Map")),
+  text_card: dynamic(() => import("./TextCard")),
+  topics: dynamic(() => import("./Topics")),
+};
