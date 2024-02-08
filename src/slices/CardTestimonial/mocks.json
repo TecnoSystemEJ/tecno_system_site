@@ -1,0 +1,76 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"imagecard",
+						{
+							"origin": {
+								"id": "main",
+								"url": "https://images.unsplash.com/photo-1607582278043-57198ac8da43",
+								"width": 4024,
+								"height": 4024
+							},
+							"url": "https://images.unsplash.com/photo-1607582278043-57198ac8da43",
+							"width": 4024,
+							"height": 4024,
+							"edit": {
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 0
+								},
+								"background": "transparent"
+							},
+							"credits": null,
+							"alt": null,
+							"__TYPE__": "ImageContent",
+							"thumbnails": {}
+						}
+					],
+					[
+						"textcard",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Reprehenderit cupidatat fugiat commodo cupidatat qui dolore fugiat pariatur id excepteur aliquip consectetur aliqua magna aliquip. Irure deserunt aute eiusmod aute. Nostrud dolore irure sunt mollit cillum Lorem velit deserunt nulla officia velit enim consectetur."
+									}
+								}
+							]
+						}
+					],
+					[
+						"namecard",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Adipisicing do eu aliquip commodo id magna. Labore est eiusmod id cillum id excepteur duis fugiat dolor incididunt minim amet. Aliqua occaecat magna id officia veniam est commodo voluptate."
+									}
+								}
+							]
+						}
+					],
+					[
+						"starscore",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "75",
+							"type": "Number"
+						}
+					]
+				]
+			}
+		]
+	}
+]

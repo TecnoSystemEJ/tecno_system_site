@@ -4,7 +4,7 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type HomeDocumentDataSlicesSlice = never;
+type HomeDocumentDataSlicesSlice = CardTestimonialSlice;
 
 /**
  * Content for home documents
@@ -22,17 +22,6 @@ interface HomeDocumentData {
   text_1: prismic.RichTextField;
 
   /**
-   * Slice Zone field in *home*
-   *
-   * - **Field Type**: Slice Zone
-   * - **Placeholder**: *None*
-   * - **API ID Path**: home.slices[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#slices
-   */
-  slices: prismic.SliceZone<HomeDocumentDataSlicesSlice>;
-
-  /**
    * image_1 field in *home*
    *
    * - **Field Type**: Image
@@ -41,7 +30,29 @@ interface HomeDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#image
    */
-  image_1: prismic.ImageField<never> /**
+  image_1: prismic.ImageField<never>;
+
+  /**
+   * textcontact field in *home*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.textcontact
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  textcontact: prismic.KeyTextField;
+
+  /**
+   * Slice Zone field in *home*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<HomeDocumentDataSlicesSlice> /**
    * Meta Description field in *home*
    *
    * - **Field Type**: Text
@@ -89,6 +100,81 @@ export type HomeDocument<Lang extends string = string> =
 
 export type AllDocumentTypes = HomeDocument;
 
+/**
+ * Primary content in *CardTestimonial → Items*
+ */
+export interface CardTestimonialSliceDefaultItem {
+  /**
+   * ImageCard field in *CardTestimonial → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: card_testimonial.items[].imagecard
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  imagecard: prismic.ImageField<never>;
+
+  /**
+   * TextCard field in *CardTestimonial → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: card_testimonial.items[].textcard
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  textcard: prismic.RichTextField;
+
+  /**
+   * NameCard field in *CardTestimonial → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: card_testimonial.items[].namecard
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  namecard: prismic.RichTextField;
+
+  /**
+   * StarScore field in *CardTestimonial → Items*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: card_testimonial.items[].starscore
+   * - **Documentation**: https://prismic.io/docs/field#number
+   */
+  starscore: prismic.NumberField;
+}
+
+/**
+ * Default variation for CardTestimonial Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CardTestimonialSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  Simplify<CardTestimonialSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *CardTestimonial*
+ */
+type CardTestimonialSliceVariation = CardTestimonialSliceDefault;
+
+/**
+ * CardTestimonial Shared Slice
+ *
+ * - **API ID**: `card_testimonial`
+ * - **Description**: CardTestimonial
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CardTestimonialSlice = prismic.SharedSlice<
+  "card_testimonial",
+  CardTestimonialSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -103,6 +189,10 @@ declare module "@prismicio/client" {
       HomeDocumentData,
       HomeDocumentDataSlicesSlice,
       AllDocumentTypes,
+      CardTestimonialSlice,
+      CardTestimonialSliceDefaultItem,
+      CardTestimonialSliceVariation,
+      CardTestimonialSliceDefault,
     };
   }
 }
