@@ -8,17 +8,17 @@
 				"__TYPE__": "GroupItemContent",
 				"value": [
 					[
-						"card_image",
+						"image",
 						{
 							"origin": {
 								"id": "main",
-								"url": "https://images.unsplash.com/photo-1547082299-de196ea013d6",
-								"width": 4272,
-								"height": 2848
+								"url": "https://images.unsplash.com/photo-1551739440-5dd934d3a94a",
+								"width": 3456,
+								"height": 4320
 							},
-							"url": "https://images.unsplash.com/photo-1547082299-de196ea013d6",
-							"width": 4272,
-							"height": 2848,
+							"url": "https://images.unsplash.com/photo-1551739440-5dd934d3a94a",
+							"width": 3456,
+							"height": 4320,
 							"edit": {
 								"zoom": 1,
 								"crop": {
@@ -34,22 +34,22 @@
 						}
 					],
 					[
-						"card_title",
+						"title",
 						{
 							"__TYPE__": "FieldContent",
-							"value": "composition",
+							"value": "red",
 							"type": "Text"
 						}
 					],
 					[
-						"card_text",
+						"text",
 						{
 							"__TYPE__": "StructuredTextContent",
 							"value": [
 								{
 									"type": "paragraph",
 									"content": {
-										"text": "Consectetur sint ipsum officia adipisicing consequat quis laborum id."
+										"text": "Occaecat ut quis cillum deserunt sit quis culpa ex id reprehenderit cupidatat. Aliquip sunt consectetur ex ea nulla sint tempor laborum veniam aute consequat ex veniam."
 									}
 								}
 							]

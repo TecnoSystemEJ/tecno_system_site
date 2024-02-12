@@ -25,15 +25,15 @@ interface HomeDocumentData {
   company_name: prismic.KeyTextField;
 
   /**
-   * Site Title field in *home*
+   * Header Title field in *home*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: home.site_title
+   * - **API ID Path**: home.header_title
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  site_title: prismic.RichTextField;
+  header_title: prismic.RichTextField;
 
   /**
    * Header Button 1 field in *home*
@@ -80,17 +80,6 @@ interface HomeDocumentData {
   header_image_2: prismic.ImageField<never>;
 
   /**
-   * Slice Zone field in *home*
-   *
-   * - **Field Type**: Slice Zone
-   * - **Placeholder**: *None*
-   * - **API ID Path**: home.slices[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#slices
-   */
-  slices: prismic.SliceZone<HomeDocumentDataSlicesSlice>;
-
-  /**
    * About Paragrath 1 field in *home*
    *
    * - **Field Type**: Rich Text
@@ -110,7 +99,18 @@ interface HomeDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  about_paragrath_2: prismic.RichTextField /**
+  about_paragrath_2: prismic.RichTextField;
+
+  /**
+   * Slice Zone field in *home*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<HomeDocumentDataSlicesSlice> /**
    * Meta Description field in *home*
    *
    * - **Field Type**: Text
@@ -163,34 +163,34 @@ export type AllDocumentTypes = HomeDocument;
  */
 export interface CarouselCardSliceDefaultItem {
   /**
-   * Card Image field in *CarouselCard → Items*
+   * Image field in *CarouselCard → Items*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: carousel_card.items[].card_image
+   * - **API ID Path**: carousel_card.items[].image
    * - **Documentation**: https://prismic.io/docs/field#image
    */
-  card_image: prismic.ImageField<never>;
+  image: prismic.ImageField<never>;
 
   /**
-   * Card Title field in *CarouselCard → Items*
+   * Title field in *CarouselCard → Items*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: carousel_card.items[].card_title
+   * - **API ID Path**: carousel_card.items[].title
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  card_title: prismic.KeyTextField;
+  title: prismic.KeyTextField;
 
   /**
-   * Card Text field in *CarouselCard → Items*
+   * Text field in *CarouselCard → Items*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: carousel_card.items[].card_text
+   * - **API ID Path**: carousel_card.items[].text
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  card_text: prismic.RichTextField;
+  text: prismic.RichTextField;
 }
 
 /**
@@ -270,24 +270,24 @@ export type MapSlice = prismic.SharedSlice<"map", MapSliceVariation>;
  */
 export interface TextCardSliceDefaultItem {
   /**
-   * Text Card Title field in *TextCard → Items*
+   * Title field in *TextCard → Items*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: text_card.items[].text_card_title
+   * - **API ID Path**: text_card.items[].title
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  text_card_title: prismic.KeyTextField;
+  title: prismic.KeyTextField;
 
   /**
-   * Text Card Text field in *TextCard → Items*
+   * Text field in *TextCard → Items*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: text_card.items[].text_card_text
+   * - **API ID Path**: text_card.items[].text
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  text_card_text: prismic.KeyTextField;
+  text: prismic.KeyTextField;
 }
 
 /**
@@ -321,33 +321,18 @@ export type TextCardSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *Topics → Primary*
- */
-export interface TopicsSliceDefaultPrimary {
-  /**
-   * check image field in *Topics → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: topics.primary.check_image
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  check_image: prismic.ImageField<never>;
-}
-
-/**
  * Primary content in *Topics → Items*
  */
 export interface TopicsSliceDefaultItem {
   /**
-   * topic text field in *Topics → Items*
+   * text field in *Topics → Items*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: topics.items[].topic_text
+   * - **API ID Path**: topics.items[].text
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  topic_text: prismic.RichTextField;
+  text: prismic.RichTextField;
 }
 
 /**
@@ -359,7 +344,7 @@ export interface TopicsSliceDefaultItem {
  */
 export type TopicsSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Simplify<TopicsSliceDefaultPrimary>,
+  Record<string, never>,
   Simplify<TopicsSliceDefaultItem>
 >;
 
@@ -404,7 +389,6 @@ declare module "@prismicio/client" {
       TextCardSliceVariation,
       TextCardSliceDefault,
       TopicsSlice,
-      TopicsSliceDefaultPrimary,
       TopicsSliceDefaultItem,
       TopicsSliceVariation,
       TopicsSliceDefault,

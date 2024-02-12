@@ -13,17 +13,17 @@
       "imageUrl": "",
       "primary": {},
       "items": {
-        "text_card_title": {
+        "title": {
           "type": "Text",
           "config": {
-            "label": "Text Card Title",
+            "label": "Title",
             "placeholder": ""
           }
         },
-        "text_card_text": {
+        "text": {
           "type": "Text",
           "config": {
-            "label": "Text Card Text",
+            "label": "Text",
             "placeholder": ""
           }
         }

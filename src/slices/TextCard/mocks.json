@@ -8,18 +8,18 @@
 				"__TYPE__": "GroupItemContent",
 				"value": [
 					[
-						"text_card_title",
+						"title",
 						{
 							"__TYPE__": "FieldContent",
-							"value": "red",
+							"value": "alike",
 							"type": "Text"
 						}
 					],
 					[
-						"text_card_text",
+						"text",
 						{
 							"__TYPE__": "FieldContent",
-							"value": "declared",
+							"value": "movie",
 							"type": "Text"
 						}
 					]
