@@ -1,7 +1,5 @@
 import React from "react";
 import { AllDocumentTypes } from "../../../prismicio-types";
-//Images
-import Image from "next/image";
 //components
 import TextCard from "@/components/TextCard";
 import NavBar from "@/components/NavBar";
