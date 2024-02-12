@@ -39,7 +39,7 @@ const HeaderSection = (props: Props) => {
         <List text="sua visão, nossa experiência" />
       </div>
 
-      <div className="flex justify-center my-4">
+      <div className="flex flex-row justify-between my-4">
         <Button
           href="/contato"
           styles="primary"
