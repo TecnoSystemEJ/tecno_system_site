@@ -13,27 +13,27 @@
       "imageUrl": "",
       "primary": {},
       "items": {
-        "imagecard": {
+        "testimonialimage": {
           "type": "Image",
           "config": {
-            "label": "ImageCard",
+            "label": "TestimonialImage",
             "constraint": {},
             "thumbnails": []
           }
         },
-        "textcard": {
+        "testiomonialtext": {
           "type": "StructuredText",
           "config": {
-            "label": "TextCard",
+            "label": "TestimonialText",
             "placeholder": "",
             "allowTargetBlank": true,
             "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         },
-        "namecard": {
+        "testimonialname": {
           "type": "StructuredText",
           "config": {
-            "label": "NameCard",
+            "label": "TestimonialName",
             "placeholder": "",
             "allowTargetBlank": true,
             "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"

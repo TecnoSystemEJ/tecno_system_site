@@ -105,34 +105,34 @@ export type AllDocumentTypes = HomeDocument;
  */
 export interface CardTestimonialSliceDefaultItem {
   /**
-   * ImageCard field in *CardTestimonial → Items*
+   * TestimonialImage field in *CardTestimonial → Items*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: card_testimonial.items[].imagecard
+   * - **API ID Path**: card_testimonial.items[].testimonialimage
    * - **Documentation**: https://prismic.io/docs/field#image
    */
-  imagecard: prismic.ImageField<never>;
+  testimonialimage: prismic.ImageField<never>;
 
   /**
-   * TextCard field in *CardTestimonial → Items*
+   * TestimonialText field in *CardTestimonial → Items*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: card_testimonial.items[].textcard
+   * - **API ID Path**: card_testimonial.items[].testiomonialtext
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  textcard: prismic.RichTextField;
+  testiomonialtext: prismic.RichTextField;
 
   /**
-   * NameCard field in *CardTestimonial → Items*
+   * TestimonialName field in *CardTestimonial → Items*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: card_testimonial.items[].namecard
+   * - **API ID Path**: card_testimonial.items[].testimonialname
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  namecard: prismic.RichTextField;
+  testimonialname: prismic.RichTextField;
 
   /**
    * StarScore field in *CardTestimonial → Items*

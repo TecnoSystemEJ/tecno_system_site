@@ -8,17 +8,25 @@
 				"__TYPE__": "GroupItemContent",
 				"value": [
 					[
-						"imagecard",
+						"starscore",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "75",
+							"type": "Number"
+						}
+					],
+					[
+						"testimonialimage",
 						{
 							"origin": {
 								"id": "main",
-								"url": "https://images.unsplash.com/photo-1607582278043-57198ac8da43",
-								"width": 4024,
-								"height": 4024
+								"url": "https://images.unsplash.com/photo-1551739440-5dd934d3a94a",
+								"width": 3456,
+								"height": 4320
 							},
-							"url": "https://images.unsplash.com/photo-1607582278043-57198ac8da43",
-							"width": 4024,
-							"height": 4024,
+							"url": "https://images.unsplash.com/photo-1551739440-5dd934d3a94a",
+							"width": 3456,
+							"height": 4320,
 							"edit": {
 								"zoom": 1,
 								"crop": {
@@ -34,39 +42,31 @@
 						}
 					],
 					[
-						"textcard",
+						"testiomonialtext",
 						{
 							"__TYPE__": "StructuredTextContent",
 							"value": [
 								{
 									"type": "paragraph",
 									"content": {
-										"text": "Reprehenderit cupidatat fugiat commodo cupidatat qui dolore fugiat pariatur id excepteur aliquip consectetur aliqua magna aliquip. Irure deserunt aute eiusmod aute. Nostrud dolore irure sunt mollit cillum Lorem velit deserunt nulla officia velit enim consectetur."
+										"text": "Nisi adipisicing cupidatat nisi."
 									}
 								}
 							]
 						}
 					],
 					[
-						"namecard",
+						"testimonialname",
 						{
 							"__TYPE__": "StructuredTextContent",
 							"value": [
 								{
 									"type": "paragraph",
 									"content": {
-										"text": "Adipisicing do eu aliquip commodo id magna. Labore est eiusmod id cillum id excepteur duis fugiat dolor incididunt minim amet. Aliqua occaecat magna id officia veniam est commodo voluptate."
+										"text": "Ut ad tempor laborum amet enim quis voluptate Lorem consectetur magna irure irure consequat reprehenderit irure. Incididunt commodo sint incididunt qui reprehenderit minim magna elit irure sint deserunt ad enim ad sit. Reprehenderit dolore sint laborum."
 									}
 								}
 							]
-						}
-					],
-					[
-						"starscore",
-						{
-							"__TYPE__": "FieldContent",
-							"value": "75",
-							"type": "Number"
 						}
 					]
 				]

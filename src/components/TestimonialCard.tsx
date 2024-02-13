@@ -27,7 +27,7 @@ const TestimonialCard = ({ name, score }: Props) => {
   }
 
   return (
-    <div className="border border-primary-main w-full h-36 rounded-xl mt-10">
+    <div className="border border-primary-main w-full h-36 rounded-xl">
       <div className="flex gap-2 items-center ml-2 mt-4 w-80">
         <div className="flex flex-col items-center justify-center">
           <div className="border border-primary-main rounded-full w-20 h-20">
