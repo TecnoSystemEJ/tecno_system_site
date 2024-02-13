@@ -3,6 +3,7 @@
 import dynamic from "next/dynamic";
 
 export const components = {
+  button: dynamic(() => import("./Button")),
   carousel_card: dynamic(() => import("./CarouselCard")),
   map: dynamic(() => import("./Map")),
   text_card: dynamic(() => import("./TextCard")),
