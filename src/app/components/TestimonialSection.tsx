@@ -36,7 +36,7 @@ const TestimonialSection = (props: Props) => {
         ))}
       </div>
       <div className="mt-10">
-        <h1 className="uppercase text-primary-main font-primary text-2xl">
+        <h1 className="text-primary-main font-primary text-2xl">
           Entre em contato
         </h1>
 
