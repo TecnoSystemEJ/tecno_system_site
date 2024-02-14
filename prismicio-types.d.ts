@@ -135,7 +135,7 @@ export interface CardTestimonialSliceDefaultItem {
   testimonialname: prismic.RichTextField;
 
   /**
-   * StarScore field in *CardTestimonial → Items*
+   * TestimonialScore field in *CardTestimonial → Items*
    *
    * - **Field Type**: Number
    * - **Placeholder**: *None*

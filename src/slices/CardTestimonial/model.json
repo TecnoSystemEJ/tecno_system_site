@@ -42,7 +42,7 @@
         "starscore": {
           "type": "Number",
           "config": {
-            "label": "StarScore",
+            "label": "TestimonialScore",
             "placeholder": ""
           }
         }
