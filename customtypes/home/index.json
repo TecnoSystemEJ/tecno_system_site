@@ -22,19 +22,30 @@
           "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
         }
       },
-      "slices": {
-        "type": "Slices",
-        "fieldset": "Slice Zone",
-        "config": {
-          "choices": {}
-        }
-      },
       "image_1": {
         "type": "Image",
         "config": {
           "label": "image_1",
           "constraint": {},
           "thumbnails": []
+        }
+      },
+      "textcontact": {
+        "type": "Text",
+        "config": {
+          "label": "textcontact",
+          "placeholder": ""
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "card_testimonial": {
+              "type": "SharedSlice"
+            }
+          }
         }
       }
     },
