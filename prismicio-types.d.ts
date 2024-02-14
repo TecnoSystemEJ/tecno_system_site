@@ -4,33 +4,82 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type HomeDocumentDataSlicesSlice = CardTestimonialSlice;
+type HomeDocumentDataSlicesSlice =
+  | TopicsSlice
+  | TextCardSlice
+  | CarouselCardSlice
+  | ButtonSlice
+  | CardTestimonialSlice;
 
 /**
  * Content for home documents
  */
 interface HomeDocumentData {
   /**
-   * text_1 field in *home*
+   * Company Name field in *home*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.company_name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  company_name: prismic.KeyTextField;
+
+  /**
+   * Header Title field in *home*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: home.text_1
+   * - **API ID Path**: home.header_title
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  text_1: prismic.RichTextField;
+  header_title: prismic.RichTextField;
 
   /**
-   * image_1 field in *home*
+   * Header Image 1 field in *home*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: home.image_1
+   * - **API ID Path**: home.header_image_1
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#image
    */
-  image_1: prismic.ImageField<never>;
+  header_image_1: prismic.ImageField<never>;
+
+  /**
+   * Header Image 2 field in *home*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.header_image_2
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  header_image_2: prismic.ImageField<never>;
+
+  /**
+   * About Paragrath 1 field in *home*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.about_paragrath_1
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  about_paragrath_1: prismic.RichTextField;
+
+  /**
+   * About Paragrath 2 field in *home*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.about_paragrath_2
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  about_paragrath_2: prismic.RichTextField;
 
   /**
    * textcontact field in *home*
@@ -96,9 +145,61 @@ interface HomeDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type HomeDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithUID<Simplify<HomeDocumentData>, "home", Lang>;
+  prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
 
 export type AllDocumentTypes = HomeDocument;
+
+/**
+ * Primary content in *Button → Primary*
+ */
+export interface ButtonSliceDefaultPrimary {
+  /**
+   * Text field in *Button → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: button.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  text: prismic.KeyTextField;
+
+  /**
+   * Link field in *Button → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: button.primary.link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+}
+
+/**
+ * Default variation for Button Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ButtonSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ButtonSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Button*
+ */
+type ButtonSliceVariation = ButtonSliceDefault;
+
+/**
+ * Button Shared Slice
+ *
+ * - **API ID**: `button`
+ * - **Description**: Button
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ButtonSlice = prismic.SharedSlice<"button", ButtonSliceVariation>;
 
 /**
  * Primary content in *CardTestimonial → Items*
@@ -175,6 +276,168 @@ export type CardTestimonialSlice = prismic.SharedSlice<
   CardTestimonialSliceVariation
 >;
 
+/**
+ * Primary content in *CarouselCard → Items*
+ */
+export interface CarouselCardSliceDefaultItem {
+  /**
+   * Image field in *CarouselCard → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: carousel_card.items[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Title field in *CarouselCard → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: carousel_card.items[].title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Text field in *CarouselCard → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: carousel_card.items[].text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+}
+
+/**
+ * Default variation for CarouselCard Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CarouselCardSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  Simplify<CarouselCardSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *CarouselCard*
+ */
+type CarouselCardSliceVariation = CarouselCardSliceDefault;
+
+/**
+ * CarouselCard Shared Slice
+ *
+ * - **API ID**: `carousel_card`
+ * - **Description**: CarouselCard
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CarouselCardSlice = prismic.SharedSlice<
+  "carousel_card",
+  CarouselCardSliceVariation
+>;
+
+/**
+ * Primary content in *TextCard → Items*
+ */
+export interface TextCardSliceDefaultItem {
+  /**
+   * Title field in *TextCard → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_card.items[].title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Text field in *TextCard → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: text_card.items[].text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  text: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for TextCard Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextCardSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  Simplify<TextCardSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *TextCard*
+ */
+type TextCardSliceVariation = TextCardSliceDefault;
+
+/**
+ * TextCard Shared Slice
+ *
+ * - **API ID**: `text_card`
+ * - **Description**: TextCard
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TextCardSlice = prismic.SharedSlice<
+  "text_card",
+  TextCardSliceVariation
+>;
+
+/**
+ * Primary content in *Topics → Items*
+ */
+export interface TopicsSliceDefaultItem {
+  /**
+   * text field in *Topics → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: topics.items[].text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+}
+
+/**
+ * Default variation for Topics Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TopicsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  Simplify<TopicsSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *Topics*
+ */
+type TopicsSliceVariation = TopicsSliceDefault;
+
+/**
+ * Topics Shared Slice
+ *
+ * - **API ID**: `topics`
+ * - **Description**: Topics
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TopicsSlice = prismic.SharedSlice<"topics", TopicsSliceVariation>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -189,10 +452,26 @@ declare module "@prismicio/client" {
       HomeDocumentData,
       HomeDocumentDataSlicesSlice,
       AllDocumentTypes,
+      ButtonSlice,
+      ButtonSliceDefaultPrimary,
+      ButtonSliceVariation,
+      ButtonSliceDefault,
       CardTestimonialSlice,
       CardTestimonialSliceDefaultItem,
       CardTestimonialSliceVariation,
       CardTestimonialSliceDefault,
+      CarouselCardSlice,
+      CarouselCardSliceDefaultItem,
+      CarouselCardSliceVariation,
+      CarouselCardSliceDefault,
+      TextCardSlice,
+      TextCardSliceDefaultItem,
+      TextCardSliceVariation,
+      TextCardSliceDefault,
+      TopicsSlice,
+      TopicsSliceDefaultItem,
+      TopicsSliceVariation,
+      TopicsSliceDefault,
     };
   }
 }
