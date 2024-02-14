@@ -81,6 +81,28 @@ interface HomeDocumentData {
   about_paragrath_2: prismic.RichTextField;
 
   /**
+   * image_1 field in *home*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.image_1
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_1: prismic.ImageField<never>;
+
+  /**
+   * textcontact field in *home*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.textcontact
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  textcontact: prismic.KeyTextField;
+
+  /**
    * Slice Zone field in *home*
    *
    * - **Field Type**: Slice Zone
@@ -393,6 +415,81 @@ type TopicsSliceVariation = TopicsSliceDefault;
  */
 export type TopicsSlice = prismic.SharedSlice<"topics", TopicsSliceVariation>;
 
+/**
+ * Primary content in *CardTestimonial → Items*
+ */
+export interface CardTestimonialSliceDefaultItem {
+  /**
+   * TestimonialImage field in *CardTestimonial → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: card_testimonial.items[].testimonialimage
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  testimonialimage: prismic.ImageField<never>;
+
+  /**
+   * TestimonialText field in *CardTestimonial → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: card_testimonial.items[].testiomonialtext
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  testiomonialtext: prismic.RichTextField;
+
+  /**
+   * TestimonialName field in *CardTestimonial → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: card_testimonial.items[].testimonialname
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  testimonialname: prismic.RichTextField;
+
+  /**
+   * TestimonialScore field in *CardTestimonial → Items*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: card_testimonial.items[].starscore
+   * - **Documentation**: https://prismic.io/docs/field#number
+   */
+  starscore: prismic.NumberField;
+}
+
+/**
+ * Default variation for CardTestimonial Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CardTestimonialSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  Simplify<CardTestimonialSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *CardTestimonial*
+ */
+type CardTestimonialSliceVariation = CardTestimonialSliceDefault;
+
+/**
+ * CardTestimonial Shared Slice
+ *
+ * - **API ID**: `card_testimonial`
+ * - **Description**: CardTestimonial
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CardTestimonialSlice = prismic.SharedSlice<
+  "card_testimonial",
+  CardTestimonialSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -427,6 +524,10 @@ declare module "@prismicio/client" {
       TopicsSliceDefaultItem,
       TopicsSliceVariation,
       TopicsSliceDefault,
+      CardTestimonialSlice,
+      CardTestimonialSliceDefaultItem,
+      CardTestimonialSliceVariation,
+      CardTestimonialSliceDefault,
     };
   }
 }

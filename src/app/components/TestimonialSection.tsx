@@ -4,6 +4,7 @@ import { AllDocumentTypes } from "../../../prismicio-types";
 import TestimonialCard from "@/components/TestimonialCard";
 import Input from "@/components/Input";
 import TextCard from "@/components/TextCard";
+import Button from "@/components/Button";
 
 interface Props {
   homeData: AllDocumentTypes;
@@ -11,7 +12,7 @@ interface Props {
 
 const names = ["Luigi", "João", "Luis", "Mateus"];
 
-const TestimonialSection = (props: Props) => {
+const TestimonialSection = ({ homeData }: Props) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [tel, setTel] = useState("");
@@ -25,22 +26,24 @@ const TestimonialSection = (props: Props) => {
   };
 
   return (
-    <div>
+    <div className="flex flex-col gap-12">
       <TextCard
         title=" Depoimentos dos nossos clientes!"
         subtitle=" com seus negócios transformados"
       />
-      <div>
+
+      <div className="flex flex-col gap-8">
         {names.map((name, index) => (
-          <TestimonialCard score={4} key={index} name={name} />
+          <TestimonialCard score={index} key={index} name={name} />
         ))}
       </div>
-      <div className="mt-10">
-        <h1 className="uppercase text-primary-main font-primary text-2xl">
+
+      <div className="flex flex-col gap-6">
+        <h1 className="text-primary-main font-primary text-2xl">
           Entre em contato
         </h1>
 
-        <form onSubmit={handleSubmit} className="flex flex-col">
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <Input
             type="text"
             placeholder="Nome"
@@ -59,12 +62,7 @@ const TestimonialSection = (props: Props) => {
             value={tel}
             onChange={(e) => setTel(e.target.value)}
           />
-          <button
-            type="submit"
-            className=" font-secondary font-normal mt-8 bg-primary-main text-gray-300 text-sm h-12 rounded-md hover:bg-primary-main transition duration-300 ease-in-out"
-          >
-            Enviar
-          </button>
+          <Button name="Enviar" href="" styles="primary" buttonSecundary />
         </form>
       </div>
     </div>

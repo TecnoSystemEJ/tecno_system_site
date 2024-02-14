@@ -5,17 +5,19 @@ type Props = {
   name: string;
   styles: "primary" | "secondary";
   href: string;
+  buttonSecundary?: boolean;
 };
 
-const Button = ({ href, styles, name }: Props) => {
+const Button = ({ href, styles, name, buttonSecundary }: Props) => {
   const buttonClass =
     styles === "primary" ? "primary-button" : "secondary-button";
 
   return (
     <Link
       href={href}
-      className={`flex py-2 text-xl px-4 text-center font-secondary
-      rounded-lg items-center ${buttonClass}`}
+      className={`flex px-4 normal-case font-secondary
+      rounded-lg items-center ${buttonClass}
+      ${buttonSecundary ? "justify-center py-3 text-sm font-normal" : "py-1 text-xl"}`}
     >
       {name}
     </Link>

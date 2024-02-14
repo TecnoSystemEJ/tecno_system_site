@@ -75,6 +75,24 @@
             }
           }
         }
+      },
+      "textcontact": {
+        "type": "Text",
+        "config": {
+          "label": "textcontact",
+          "placeholder": ""
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "card_testimonial": {
+              "type": "SharedSlice"
+            }
+          }
+        }
       }
     },
     "SEO & Metadata": {
