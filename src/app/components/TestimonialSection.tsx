@@ -12,7 +12,7 @@ interface Props {
 
 const names = ["Luigi", "João", "Luis", "Mateus"];
 
-const TestimonialSection = (props: Props) => {
+const TestimonialSection = ({ homeData }: Props) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [tel, setTel] = useState("");
@@ -31,11 +31,13 @@ const TestimonialSection = (props: Props) => {
         title=" Depoimentos dos nossos clientes!"
         subtitle=" com seus negócios transformados"
       />
+
       <div className="flex flex-col gap-8">
         {names.map((name, index) => (
-          <TestimonialCard score={4} key={index} name={name} />
+          <TestimonialCard score={index} key={index} name={name} />
         ))}
       </div>
+
       <div className="flex flex-col gap-6">
         <h1 className="text-primary-main font-primary text-2xl">
           Entre em contato
@@ -60,13 +62,7 @@ const TestimonialSection = (props: Props) => {
             value={tel}
             onChange={(e) => setTel(e.target.value)}
           />
-          <Button
-            name="Enviar"
-            href=""
-            styles="primary"
-            textcenter="center"
-            size="sm"
-          />
+          <Button name="Enviar" href="" styles="primary" buttonSecundary />
         </form>
       </div>
     </div>
