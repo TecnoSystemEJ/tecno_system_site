@@ -56,26 +56,6 @@
           "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
         }
       },
-      "slices": {
-        "type": "Slices",
-        "fieldset": "Slice Zone",
-        "config": {
-          "choices": {
-            "button": {
-              "type": "SharedSlice"
-            },
-            "topics": {
-              "type": "SharedSlice"
-            },
-            "text_card": {
-              "type": "SharedSlice"
-            },
-            "carousel_card": {
-              "type": "SharedSlice"
-            }
-          }
-        }
-      },
       "textcontact": {
         "type": "Text",
         "config": {
@@ -88,6 +68,18 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "topics": {
+              "type": "SharedSlice"
+            },
+            "text_card": {
+              "type": "SharedSlice"
+            },
+            "carousel_card": {
+              "type": "SharedSlice"
+            },
+            "button": {
+              "type": "SharedSlice"
+            },
             "card_testimonial": {
               "type": "SharedSlice"
             }
