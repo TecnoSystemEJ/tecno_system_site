@@ -9,8 +9,8 @@ interface Props {
 
 const AboutSection = ({}: Props) => {
   return (
-    <div className="bg-gray-alt m-0 flex flex-col overflow-x-hidden">
-      <h2 className="text-3xl  font-primary text-primary-main my-3 font-400">
+    <div className="flex flex-col overflow-x-hidden">
+      <h2 className="text-3xl font-primary text-primary-main my-3 font-400">
         tecnosystem
       </h2>
       <p className="font-secondary text-black text-sm font-400 mb-8">
