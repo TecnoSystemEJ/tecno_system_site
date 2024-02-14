@@ -14,14 +14,14 @@ const Button = ({ href, styles, name, textcenter, size }: Props) => {
     styles === "primary" ? "primary-button" : "secondary-button";
 
   const textCenter = textcenter === "center" ? "justify-center" : "";
- 
-  const fontsize = size === "sm" ? "text-sm" : "text-xl"
+
+  const fontsize = size === "sm" ? "text-sm" : "text-xl";
 
   return (
     <Link
       href={href}
-      className={`flex py-2 px-4 text-center font-secondary
-      rounded-lg items-center font-normal h-12  ${buttonClass} ${textCenter} ${fontsize} `}
+      className={`flex py-1 text-xl px-4 normal-case text-center font-secondary
+      rounded-lg items-center ${buttonClass}`}
     >
       {name}
     </Link>

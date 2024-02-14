@@ -37,8 +37,7 @@ const TestimonialSection = (props: Props) => {
         ))}
       </div>
       <div className="flex flex-col gap-6">
-        
-        <h1 className="uppercase text-primary-main font-primary text-2xl">
+        <h1 className="text-primary-main font-primary text-2xl">
           Entre em contato
         </h1>
 
@@ -61,7 +60,13 @@ const TestimonialSection = (props: Props) => {
             value={tel}
             onChange={(e) => setTel(e.target.value)}
           />
-         <Button name="Enviar" href="" styles="primary" textcenter="center" size="sm"/>
+          <Button
+            name="Enviar"
+            href=""
+            styles="primary"
+            textcenter="center"
+            size="sm"
+          />
         </form>
       </div>
     </div>

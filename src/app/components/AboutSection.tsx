@@ -9,7 +9,7 @@ interface Props {
 
 const AboutSection = ({}: Props) => {
   return (
-    <div className="bg-gray-alt uppercase m-0 flex flex-col overflow-x-hidden">
+    <div className="bg-gray-alt m-0 flex flex-col overflow-x-hidden">
       <h2 className="text-3xl  font-primary text-primary-main my-3 font-400">
         tecnosystem
       </h2>
