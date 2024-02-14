@@ -14,7 +14,7 @@ const Button = ({ href, styles, name }: Props) => {
   return (
     <Link
       href={href}
-      className={`flex py-2 text-xl px-4 text-center font-secondary
+      className={`flex py-1 text-xl px-4 normal-case text-center font-secondary
       rounded-lg items-center ${buttonClass}`}
     >
       {name}

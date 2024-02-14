@@ -2,11 +2,9 @@ import React from "react";
 import { AllDocumentTypes } from "../../../prismicio-types";
 //components
 import TextCard from "@/components/TextCard";
-import NavBar from "@/components/NavBar";
 import CustomImage from "@/components/CustomImage";
 import Button from "@/components/Button";
 import List from "@/components/List";
-
 
 type Props = {
   homeData: AllDocumentTypes;
@@ -17,57 +15,44 @@ const HeaderSection = (props: Props) => {
 
   return (
     <div className="bg-gray-alt">
-      <NavBar />
-
-      <div className="flex flex-col text-xl text-red-500 text-righteous font-primary mb-3 text-[24px] mt-14 uppercase">
-        tecnosystem
-      </div>
-
-      <div className="font-primary text-black text-[28px] font-medium mb-8 uppercase">
-        transformando ideias em{" "}
-        <div className="font-primary text-red-500 text-[28px] font-medium inline uppercase">
-        tecnologia
+      <header className="flex flex-col mb-4 gap-y-7">
+        <div className="flex flex-col gap-4 font-primary font-normal">
+          <h3 className=" text-2xl text-primary-main">Tecnosystem</h3>
+          <h1 className="text-3xl">
+            transformando ideias em
+            <span className="text-primary-main"> tecnologia</span>
+          </h1>
         </div>
-      </div>
 
-      <div>
-        <List text="do conceito à realidade digital" />
-        <List text="solução de software personalizadas" />
-        <List text="inovação na ponta dos seus dedos" />
-        <List text="sua visão, nossa experiência" />
-      </div>
+        <ul className="flex flex-col gap-2">
+          <List text="do conceito à realidade digital" />
+          <List text="solução de software personalizadas" />
+          <List text="inovação na ponta dos seus dedos" />
+          <List text="sua visão, nossa experiência" />
+        </ul>
 
-      <div className="flex flex-row justify-between my-4">
-        <Button
-          href="/contato"
-          styles="primary"
-          name="Entre em contato"
-        >
-        </Button>
+        <div className="flex flex-row justify-between">
+          <Button href="/contato" styles="primary" name="Entre em contato" />
+          <Button href="/contato" styles="secondary" name="Saiba mais" />
+        </div>
+      </header>
 
-        <Button
-          href="/contato"
-          styles="secondary"
-          name="Saiba mais"
-        >
-        </Button>
-      </div>
-
-      <div className="mb-8">
+      <div className="flex flex-col gap-y-8">
         <TextCard
           title="COMO AJUDAMOS NOSSOS CLIENTES"
           subtitle="E VAMOS AJUDAR VOCÊ"
         />
-      </div>
 
-      <div className="flex w-full h-[220px] mb-12">
-        <CustomImage src={"/homeicons/retangle.svg"} alt="Burger" />
-      </div>
+        <div className="flex flex-col gap-10">
+          <div className="flex w-full h-[220px]">
+            <CustomImage src={"/homeicons/retangle.svg"} alt="Burger" />
+          </div>
 
-      <div className="flex w-full h-[220px]">
-        <CustomImage src={"/homeicons/retangle.svg"} alt="Burger" />
+          <div className="flex w-full h-[220px]">
+            <CustomImage src={"/homeicons/retangle.svg"} alt="Burger" />
+          </div>
+        </div>
       </div>
-
     </div>
   );
 };
