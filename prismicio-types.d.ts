@@ -60,37 +60,26 @@ interface HomeDocumentData {
   header_image_2: prismic.ImageField<never>;
 
   /**
-   * About Paragrath 1 field in *home*
+   * About Text field in *home*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: home.about_paragrath_1
+   * - **API ID Path**: home.about_text
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  about_paragrath_1: prismic.RichTextField;
+  about_text: prismic.RichTextField;
 
   /**
-   * About Paragrath 2 field in *home*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: home.about_paragrath_2
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  about_paragrath_2: prismic.RichTextField;
-
-  /**
-   * textcontact field in *home*
+   * Text Contact field in *home*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: home.textcontact
+   * - **API ID Path**: home.text_contact
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  textcontact: prismic.KeyTextField;
+  text_contact: prismic.KeyTextField;
 
   /**
    * Slice Zone field in *home*
@@ -239,7 +228,7 @@ export interface CardTestimonialSliceDefaultItem {
    * TestimonialScore field in *CardTestimonial → Items*
    *
    * - **Field Type**: Number
-   * - **Placeholder**: *None*
+   * - **Placeholder**: NUMBER < 5
    * - **API ID Path**: card_testimonial.items[].starscore
    * - **Documentation**: https://prismic.io/docs/field#number
    */

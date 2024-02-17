@@ -43,7 +43,7 @@
           "type": "Number",
           "config": {
             "label": "TestimonialScore",
-            "placeholder": ""
+            "placeholder": "NUMBER < 5"
           }
         }
       }

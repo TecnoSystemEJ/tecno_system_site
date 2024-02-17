@@ -38,28 +38,19 @@
           "thumbnails": []
         }
       },
-      "about_paragrath_1": {
+      "about_text": {
         "type": "StructuredText",
         "config": {
-          "label": "About Paragrath 1",
+          "label": "About Text",
           "placeholder": "",
           "allowTargetBlank": true,
-          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
         }
       },
-      "about_paragrath_2": {
-        "type": "StructuredText",
-        "config": {
-          "label": "About Paragrath 2",
-          "placeholder": "",
-          "allowTargetBlank": true,
-          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-        }
-      },
-      "textcontact": {
+      "text_contact": {
         "type": "Text",
         "config": {
-          "label": "textcontact",
+          "label": "Text Contact",
           "placeholder": ""
         }
       },
