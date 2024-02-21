@@ -4,94 +4,12 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type HomeDocumentDataSlicesSlice =
-  | TopicsSlice
-  | TextCardSlice
-  | CarouselCardSlice
-  | ButtonSlice
-  | CardTestimonialSlice;
+type HomeDocumentDataSlicesSlice = AboutSectionSlice;
 
 /**
  * Content for home documents
  */
 interface HomeDocumentData {
-  /**
-   * Company Name field in *home*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: home.company_name
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  company_name: prismic.KeyTextField;
-
-  /**
-   * Header Title field in *home*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: home.header_title
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  header_title: prismic.RichTextField;
-
-  /**
-   * Header Image 1 field in *home*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: home.header_image_1
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  header_image_1: prismic.ImageField<never>;
-
-  /**
-   * Header Image 2 field in *home*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: home.header_image_2
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  header_image_2: prismic.ImageField<never>;
-
-  /**
-   * About Paragrath 1 field in *home*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: home.about_paragrath_1
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  about_paragrath_1: prismic.RichTextField;
-
-  /**
-   * About Paragrath 2 field in *home*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: home.about_paragrath_2
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  about_paragrath_2: prismic.RichTextField;
-
-  /**
-   * textcontact field in *home*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: home.textcontact
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  textcontact: prismic.KeyTextField;
-
   /**
    * Slice Zone field in *home*
    *
@@ -148,6 +66,116 @@ export type HomeDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
 
 export type AllDocumentTypes = HomeDocument;
+
+/**
+ * Primary content in *AboutSection → Primary*
+ */
+export interface AboutSectionSliceDefaultPrimary {
+  /**
+   * Company Name field in *AboutSection → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_section.primary.company_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  company_name: prismic.KeyTextField;
+
+  /**
+   * Text field in *AboutSection → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_section.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+
+  /**
+   * Text Card Title field in *AboutSection → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_section.primary.text_card_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text_card_title: prismic.TitleField;
+
+  /**
+   * Text Card Subtitle field in *AboutSection → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_section.primary.text_card_subtitle
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text_card_subtitle: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *AboutSection → Items*
+ */
+export interface AboutSectionSliceDefaultItem {
+  /**
+   * Image field in *AboutSection → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_section.items[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Title field in *AboutSection → Items*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_section.items[].title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.TitleField;
+
+  /**
+   * Description field in *AboutSection → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_section.items[].description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+}
+
+/**
+ * Default variation for AboutSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AboutSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<AboutSectionSliceDefaultPrimary>,
+  Simplify<AboutSectionSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *AboutSection*
+ */
+type AboutSectionSliceVariation = AboutSectionSliceDefault;
+
+/**
+ * AboutSection Shared Slice
+ *
+ * - **API ID**: `about_section`
+ * - **Description**: AboutSection
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AboutSectionSlice = prismic.SharedSlice<
+  "about_section",
+  AboutSectionSliceVariation
+>;
 
 /**
  * Primary content in *Button → Primary*
@@ -452,6 +480,11 @@ declare module "@prismicio/client" {
       HomeDocumentData,
       HomeDocumentDataSlicesSlice,
       AllDocumentTypes,
+      AboutSectionSlice,
+      AboutSectionSliceDefaultPrimary,
+      AboutSectionSliceDefaultItem,
+      AboutSectionSliceVariation,
+      AboutSectionSliceDefault,
       ButtonSlice,
       ButtonSliceDefaultPrimary,
       ButtonSliceVariation,

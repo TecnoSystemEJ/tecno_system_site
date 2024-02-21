@@ -7,7 +7,7 @@ interface Props {
   homeData: AllDocumentTypes;
 }
 
-const AboutSection = ({}: Props) => {
+const AboutSection = ({ homeData }: Props) => {
   return (
     <div className="flex flex-col overflow-x-hidden">
       <h2 className="text-3xl font-primary text-primary-main my-3 font-400">

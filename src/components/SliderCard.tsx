@@ -1,20 +1,40 @@
 import React from "react";
-import Image from "next/image";
+import { ImageField, RichTextField } from "@prismicio/client";
+import { PrismicNextImage } from "@prismicio/next";
+import { PrismicRichText } from "@prismicio/react";
 
 interface Props {
-  image: string;
-  title: string;
-  text: string;
+  image: ImageField;
+  title: RichTextField;
+  description: RichTextField;
 }
 
-const SliderCard = ({ image, title, text }: Props) => {
+const SliderCard = ({ image, title, description }: Props) => {
   return (
-    <div className="bg-gray-alt flex flex-col items-start justify-center rounded-2xl shadow-md p-4">
-      <div className="w-72 h-40 rounded-2xl overflow-hidden">
-        <Image src={`/images/${image}`} alt="any" height={300} width={300} />
+    <div className="h-[356px] gap-4 bg-gray-alt flex flex-col items-center justify-start rounded-2xl shadow-md p-4">
+      <div className="w-72 min-h-[156px] max-h-[156px] rounded-2xl overflow-hidden">
+        <PrismicNextImage field={image} height={300} width={300} />
       </div>
-      <h2 className="text-xl normal-case font-primary">{title}</h2>
-      <p className="text-base lowercase font-400 font-secondary mb-2">{text}</p>
+      <div className="flex flex-col items-start flex-1">
+        <PrismicRichText
+          field={title}
+          components={{
+            heading2: ({ children }) => (
+              <h2 className="text-xl normal-case font-primary">{children}</h2>
+            ),
+          }}
+        />
+        <PrismicRichText
+          field={description}
+          components={{
+            paragraph: ({ children }) => (
+              <p className="text-base lowercase font-400 font-secondary mb-2">
+                {children}
+              </p>
+            ),
+          }}
+        />
+      </div>
     </div>
   );
 };
