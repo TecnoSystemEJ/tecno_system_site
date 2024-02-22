@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type HomeDocumentDataSlicesSlice =
+  | HeaderSectionSlice
   | TopicsSlice
   | TextCardSlice
   | CarouselCardSlice
@@ -342,6 +343,51 @@ export type CarouselCardSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *HeaderSection → Primary*
+ */
+export interface HeaderSectionSliceDefaultPrimary {
+  /**
+   * Company Name field in *HeaderSection → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header_section.primary.company_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  company_name: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for HeaderSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeaderSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HeaderSectionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *HeaderSection*
+ */
+type HeaderSectionSliceVariation = HeaderSectionSliceDefault;
+
+/**
+ * HeaderSection Shared Slice
+ *
+ * - **API ID**: `header_section`
+ * - **Description**: HeaderSection
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeaderSectionSlice = prismic.SharedSlice<
+  "header_section",
+  HeaderSectionSliceVariation
+>;
+
+/**
  * Primary content in *TextCard → Items*
  */
 export interface TextCardSliceDefaultItem {
@@ -464,6 +510,10 @@ declare module "@prismicio/client" {
       CarouselCardSliceDefaultItem,
       CarouselCardSliceVariation,
       CarouselCardSliceDefault,
+      HeaderSectionSlice,
+      HeaderSectionSliceDefaultPrimary,
+      HeaderSectionSliceVariation,
+      HeaderSectionSliceDefault,
       TextCardSlice,
       TextCardSliceDefaultItem,
       TextCardSliceVariation,

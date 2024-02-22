@@ -1,0 +1,14 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"company_name": {
+				"__TYPE__": "FieldContent",
+				"value": "toward",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

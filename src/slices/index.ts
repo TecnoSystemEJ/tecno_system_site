@@ -6,6 +6,7 @@ export const components = {
   button: dynamic(() => import("./Button")),
   card_testimonial: dynamic(() => import("./CardTestimonial")),
   carousel_card: dynamic(() => import("./CarouselCard")),
+  header_section: dynamic(() => import("./HeaderSection")),
   text_card: dynamic(() => import("./TextCard")),
   topics: dynamic(() => import("./Topics")),
 };

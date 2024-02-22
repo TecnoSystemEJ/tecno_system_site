@@ -68,6 +68,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "header_section": {
+              "type": "SharedSlice"
+            },
             "topics": {
               "type": "SharedSlice"
             },
