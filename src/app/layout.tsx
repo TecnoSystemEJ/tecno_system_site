@@ -27,7 +27,7 @@ export default function RootLayout({
       className={`${inter.variable} ${righteous.variable} text-black m-0 p-0 bg-gray-alt`}
     >
       <body>
-        <div className="m-0 container p-0">{children}</div>
+        <div className="m-0 container px-4 uppercase">{children}</div>
       </body>
     </html>
   );
