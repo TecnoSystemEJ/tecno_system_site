@@ -1,4 +1,6 @@
-// components/CustomImage.tsx
+// Flow
+import React from "react";
+// Component
 import Image from "next/image";
 
 interface CustomImageProps {
