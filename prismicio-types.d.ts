@@ -4,7 +4,10 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type HomeDocumentDataSlicesSlice = TestimonialSectionSlice | AboutSectionSlice;
+type HomeDocumentDataSlicesSlice =
+  | HeaderSectionSlice
+  | TestimonialSectionSlice
+  | AboutSectionSlice;
 
 /**
  * Content for home documents
@@ -178,6 +181,136 @@ export type AboutSectionSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *HeaderSection → Primary*
+ */
+export interface HeaderSectionSliceDefaultPrimary {
+  /**
+   * Company Name field in *HeaderSection → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header_section.primary.company_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  company_name: prismic.KeyTextField;
+
+  /**
+   * Sub_title field in *HeaderSection → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header_section.primary.sub_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  sub_title: prismic.RichTextField;
+
+  /**
+   * Button Text 1 field in *HeaderSection → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header_section.primary.button_text_1
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_text_1: prismic.KeyTextField;
+
+  /**
+   * Button Link 1 field in *HeaderSection → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header_section.primary.button_link_1
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link_1: prismic.LinkField;
+
+  /**
+   * Button Text 2 field in *HeaderSection → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header_section.primary.button_text_2
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_text_2: prismic.KeyTextField;
+
+  /**
+   * Button Link 2 field in *HeaderSection → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header_section.primary.button_link_2
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link_2: prismic.LinkField;
+
+  /**
+   * Image 1 field in *HeaderSection → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header_section.primary.image_1
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_1: prismic.ImageField<never>;
+
+  /**
+   * Image 2 field in *HeaderSection → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header_section.primary.image_2
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_2: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *HeaderSection → Items*
+ */
+export interface HeaderSectionSliceDefaultItem {
+  /**
+   * Topics field in *HeaderSection → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header_section.items[].topics
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  topics: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for HeaderSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeaderSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HeaderSectionSliceDefaultPrimary>,
+  Simplify<HeaderSectionSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *HeaderSection*
+ */
+type HeaderSectionSliceVariation = HeaderSectionSliceDefault;
+
+/**
+ * HeaderSection Shared Slice
+ *
+ * - **API ID**: `header_section`
+ * - **Description**: HeaderSection
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeaderSectionSlice = prismic.SharedSlice<
+  "header_section",
+  HeaderSectionSliceVariation
+>;
+
+/**
  * Primary content in *TestimonialSection → Primary*
  */
 export interface TestimonialSectionSliceDefaultPrimary {
@@ -296,6 +429,11 @@ declare module "@prismicio/client" {
       AboutSectionSliceDefaultItem,
       AboutSectionSliceVariation,
       AboutSectionSliceDefault,
+      HeaderSectionSlice,
+      HeaderSectionSliceDefaultPrimary,
+      HeaderSectionSliceDefaultItem,
+      HeaderSectionSliceVariation,
+      HeaderSectionSliceDefault,
       TestimonialSectionSlice,
       TestimonialSectionSliceDefaultPrimary,
       TestimonialSectionSliceDefaultItem,
