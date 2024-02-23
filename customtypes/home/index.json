@@ -6,81 +6,12 @@
   "status": true,
   "json": {
     "Main": {
-      "company_name": {
-        "type": "Text",
-        "config": {
-          "label": "Company Name",
-          "placeholder": ""
-        }
-      },
-      "header_title": {
-        "type": "StructuredText",
-        "config": {
-          "label": "Header Title",
-          "placeholder": "",
-          "allowTargetBlank": true,
-          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-        }
-      },
-      "header_image_1": {
-        "type": "Image",
-        "config": {
-          "label": "Header Image 1",
-          "constraint": {},
-          "thumbnails": []
-        }
-      },
-      "header_image_2": {
-        "type": "Image",
-        "config": {
-          "label": "Header Image 2",
-          "constraint": {},
-          "thumbnails": []
-        }
-      },
-      "about_paragrath_1": {
-        "type": "StructuredText",
-        "config": {
-          "label": "About Paragrath 1",
-          "placeholder": "",
-          "allowTargetBlank": true,
-          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-        }
-      },
-      "about_paragrath_2": {
-        "type": "StructuredText",
-        "config": {
-          "label": "About Paragrath 2",
-          "placeholder": "",
-          "allowTargetBlank": true,
-          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-        }
-      },
-      "textcontact": {
-        "type": "Text",
-        "config": {
-          "label": "textcontact",
-          "placeholder": ""
-        }
-      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "topics": {
-              "type": "SharedSlice"
-            },
-            "text_card": {
-              "type": "SharedSlice"
-            },
-            "carousel_card": {
-              "type": "SharedSlice"
-            },
-            "button": {
-              "type": "SharedSlice"
-            },
-            "card_testimonial": {
+            "about_section": {
               "type": "SharedSlice"
             }
           }

@@ -3,9 +3,5 @@
 import dynamic from "next/dynamic";
 
 export const components = {
-  button: dynamic(() => import("./Button")),
-  card_testimonial: dynamic(() => import("./CardTestimonial")),
-  carousel_card: dynamic(() => import("./CarouselCard")),
-  text_card: dynamic(() => import("./TextCard")),
-  topics: dynamic(() => import("./Topics")),
+  about_section: dynamic(() => import("./AboutSection")),
 };

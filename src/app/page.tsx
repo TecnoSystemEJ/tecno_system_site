@@ -1,23 +1,23 @@
-// Flow
 import React from "react";
-// Prismic
+import { Metadata } from "next";
+import { SliceZone } from "@prismicio/react";
+
 import { createClient } from "@/prismicio";
-// Components
-import TestimonialSection from "./components/TestimonialSection";
-import HeaderSection from "./components/HeaderSection";
-import AboutSection from "./components/AboutSection";
+import { components } from "@/slices";
 
-const page = async () => {
+export default async function Page() {
   const client = createClient();
-  const home = await client.getSingle("home");
+  const page = await client.getSingle("home");
 
-  return (
-    <div className="p-0 m-0 mb-5 px-4 uppercase">
-      <HeaderSection homeData={home} />
-      <AboutSection homeData={home} />
-      <TestimonialSection homeData={home} />
-    </div>
-  );
-};
+  return <SliceZone slices={page.data.slices} components={components} />;
+}
 
-export default page;
+export async function generateMetadata(): Promise<Metadata> {
+  const client = createClient();
+  const page = await client.getSingle("home");
+
+  return {
+    title: page.data.meta_title,
+    description: page.data.meta_description,
+  };
+}

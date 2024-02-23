@@ -1,10 +1,11 @@
 import React from "react";
 import SliderCard from "./SliderCard";
+import { ImageField, RichTextField } from "@prismicio/client";
 
 type Card = {
-  image: string;
-  title: string;
-  text: string;
+  image: ImageField;
+  title: RichTextField;
+  description: RichTextField;
 };
 
 interface Props {
@@ -20,7 +21,7 @@ const SliderComponent = ({ cards }: Props) => {
             <SliderCard
               image={card.image}
               title={card.title}
-              text={card.text}
+              description={card.description}
             />
           </div>
         );
