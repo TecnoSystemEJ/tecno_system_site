@@ -4,7 +4,7 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type HomeDocumentDataSlicesSlice = AboutSectionSlice;
+type HomeDocumentDataSlicesSlice = TestimonialSectionSlice | AboutSectionSlice;
 
 /**
  * Content for home documents
@@ -178,293 +178,104 @@ export type AboutSectionSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *Button → Primary*
+ * Primary content in *TestimonialSection → Primary*
  */
-export interface ButtonSliceDefaultPrimary {
+export interface TestimonialSectionSliceDefaultPrimary {
   /**
-   * Text field in *Button → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: button.primary.text
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  text: prismic.KeyTextField;
-
-  /**
-   * Link field in *Button → Primary*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: button.primary.link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  link: prismic.LinkField;
-}
-
-/**
- * Default variation for Button Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type ButtonSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<ButtonSliceDefaultPrimary>,
-  never
->;
-
-/**
- * Slice variation for *Button*
- */
-type ButtonSliceVariation = ButtonSliceDefault;
-
-/**
- * Button Shared Slice
- *
- * - **API ID**: `button`
- * - **Description**: Button
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type ButtonSlice = prismic.SharedSlice<"button", ButtonSliceVariation>;
-
-/**
- * Primary content in *CardTestimonial → Items*
- */
-export interface CardTestimonialSliceDefaultItem {
-  /**
-   * TestimonialImage field in *CardTestimonial → Items*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: card_testimonial.items[].testimonialimage
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  testimonialimage: prismic.ImageField<never>;
-
-  /**
-   * TestimonialText field in *CardTestimonial → Items*
+   * Text Card Title field in *TestimonialSection → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: card_testimonial.items[].testiomonialtext
+   * - **API ID Path**: testimonial_section.primary.text_card_title
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  testiomonialtext: prismic.RichTextField;
+  text_card_title: prismic.RichTextField;
 
   /**
-   * TestimonialName field in *CardTestimonial → Items*
+   * Text Card Subtitle field in *TestimonialSection → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: card_testimonial.items[].testimonialname
+   * - **API ID Path**: testimonial_section.primary.text_card_subtitle
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  testimonialname: prismic.RichTextField;
-
-  /**
-   * TestimonialScore field in *CardTestimonial → Items*
-   *
-   * - **Field Type**: Number
-   * - **Placeholder**: *None*
-   * - **API ID Path**: card_testimonial.items[].starscore
-   * - **Documentation**: https://prismic.io/docs/field#number
-   */
-  starscore: prismic.NumberField;
+  text_card_subtitle: prismic.RichTextField;
 }
 
 /**
- * Default variation for CardTestimonial Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
+ * Primary content in *TestimonialSection → Items*
  */
-export type CardTestimonialSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Record<string, never>,
-  Simplify<CardTestimonialSliceDefaultItem>
->;
-
-/**
- * Slice variation for *CardTestimonial*
- */
-type CardTestimonialSliceVariation = CardTestimonialSliceDefault;
-
-/**
- * CardTestimonial Shared Slice
- *
- * - **API ID**: `card_testimonial`
- * - **Description**: CardTestimonial
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type CardTestimonialSlice = prismic.SharedSlice<
-  "card_testimonial",
-  CardTestimonialSliceVariation
->;
-
-/**
- * Primary content in *CarouselCard → Items*
- */
-export interface CarouselCardSliceDefaultItem {
+export interface TestimonialSectionSliceDefaultItem {
   /**
-   * Image field in *CarouselCard → Items*
+   * Image field in *TestimonialSection → Items*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: carousel_card.items[].image
+   * - **API ID Path**: testimonial_section.items[].image
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>;
 
   /**
-   * Title field in *CarouselCard → Items*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: carousel_card.items[].title
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  title: prismic.KeyTextField;
-
-  /**
-   * Text field in *CarouselCard → Items*
+   * Title field in *TestimonialSection → Items*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: carousel_card.items[].text
+   * - **API ID Path**: testimonial_section.items[].title
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  text: prismic.RichTextField;
-}
-
-/**
- * Default variation for CarouselCard Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type CarouselCardSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Record<string, never>,
-  Simplify<CarouselCardSliceDefaultItem>
->;
-
-/**
- * Slice variation for *CarouselCard*
- */
-type CarouselCardSliceVariation = CarouselCardSliceDefault;
-
-/**
- * CarouselCard Shared Slice
- *
- * - **API ID**: `carousel_card`
- * - **Description**: CarouselCard
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type CarouselCardSlice = prismic.SharedSlice<
-  "carousel_card",
-  CarouselCardSliceVariation
->;
-
-/**
- * Primary content in *TextCard → Items*
- */
-export interface TextCardSliceDefaultItem {
-  /**
-   * Title field in *TextCard → Items*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: text_card.items[].title
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  title: prismic.KeyTextField;
+  title: prismic.RichTextField;
 
   /**
-   * Text field in *TextCard → Items*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: text_card.items[].text
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  text: prismic.KeyTextField;
-}
-
-/**
- * Default variation for TextCard Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type TextCardSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Record<string, never>,
-  Simplify<TextCardSliceDefaultItem>
->;
-
-/**
- * Slice variation for *TextCard*
- */
-type TextCardSliceVariation = TextCardSliceDefault;
-
-/**
- * TextCard Shared Slice
- *
- * - **API ID**: `text_card`
- * - **Description**: TextCard
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type TextCardSlice = prismic.SharedSlice<
-  "text_card",
-  TextCardSliceVariation
->;
-
-/**
- * Primary content in *Topics → Items*
- */
-export interface TopicsSliceDefaultItem {
-  /**
-   * text field in *Topics → Items*
+   * Text field in *TestimonialSection → Items*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: topics.items[].text
+   * - **API ID Path**: testimonial_section.items[].text
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   text: prismic.RichTextField;
+
+  /**
+   * Score field in *TestimonialSection → Items*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonial_section.items[].score
+   * - **Documentation**: https://prismic.io/docs/field#number
+   */
+  score: prismic.NumberField;
 }
 
 /**
- * Default variation for Topics Slice
+ * Default variation for TestimonialSection Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type TopicsSliceDefault = prismic.SharedSliceVariation<
+export type TestimonialSectionSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
-  Simplify<TopicsSliceDefaultItem>
+  Simplify<TestimonialSectionSliceDefaultPrimary>,
+  Simplify<TestimonialSectionSliceDefaultItem>
 >;
 
 /**
- * Slice variation for *Topics*
+ * Slice variation for *TestimonialSection*
  */
-type TopicsSliceVariation = TopicsSliceDefault;
+type TestimonialSectionSliceVariation = TestimonialSectionSliceDefault;
 
 /**
- * Topics Shared Slice
+ * TestimonialSection Shared Slice
  *
- * - **API ID**: `topics`
- * - **Description**: Topics
+ * - **API ID**: `testimonial_section`
+ * - **Description**: TestimonialSection
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type TopicsSlice = prismic.SharedSlice<"topics", TopicsSliceVariation>;
+export type TestimonialSectionSlice = prismic.SharedSlice<
+  "testimonial_section",
+  TestimonialSectionSliceVariation
+>;
 
 declare module "@prismicio/client" {
   interface CreateClient {
@@ -485,26 +296,11 @@ declare module "@prismicio/client" {
       AboutSectionSliceDefaultItem,
       AboutSectionSliceVariation,
       AboutSectionSliceDefault,
-      ButtonSlice,
-      ButtonSliceDefaultPrimary,
-      ButtonSliceVariation,
-      ButtonSliceDefault,
-      CardTestimonialSlice,
-      CardTestimonialSliceDefaultItem,
-      CardTestimonialSliceVariation,
-      CardTestimonialSliceDefault,
-      CarouselCardSlice,
-      CarouselCardSliceDefaultItem,
-      CarouselCardSliceVariation,
-      CarouselCardSliceDefault,
-      TextCardSlice,
-      TextCardSliceDefaultItem,
-      TextCardSliceVariation,
-      TextCardSliceDefault,
-      TopicsSlice,
-      TopicsSliceDefaultItem,
-      TopicsSliceVariation,
-      TopicsSliceDefault,
+      TestimonialSectionSlice,
+      TestimonialSectionSliceDefaultPrimary,
+      TestimonialSectionSliceDefaultItem,
+      TestimonialSectionSliceVariation,
+      TestimonialSectionSliceDefault,
     };
   }
 }
