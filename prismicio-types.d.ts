@@ -184,12 +184,12 @@ export interface TestimonialSectionSliceDefaultPrimary {
   /**
    * Text Card Title field in *TestimonialSection → Primary*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Title
    * - **Placeholder**: *None*
    * - **API ID Path**: testimonial_section.primary.text_card_title
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  text_card_title: prismic.RichTextField;
+  text_card_title: prismic.TitleField;
 
   /**
    * Text Card Subtitle field in *TestimonialSection → Primary*
@@ -219,12 +219,12 @@ export interface TestimonialSectionSliceDefaultItem {
   /**
    * Title field in *TestimonialSection → Items*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Title
    * - **Placeholder**: *None*
    * - **API ID Path**: testimonial_section.items[].title
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  title: prismic.RichTextField;
+  title: prismic.TitleField;
 
   /**
    * Text field in *TestimonialSection → Items*
