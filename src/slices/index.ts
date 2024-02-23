@@ -3,5 +3,5 @@
 import dynamic from "next/dynamic";
 
 export const components = {
-  card_testimonial: dynamic(() => import("./CardTestimonial")),
+  testimonial: dynamic(() => import("./Testimonial")),
 };

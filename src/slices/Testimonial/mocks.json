@@ -1,0 +1,99 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"testimonial_title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading3",
+						"content": {
+							"text": "Little"
+						}
+					}
+				]
+			},
+			"testimonial_subtitle": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Pariatur adipisicing culpa in incididunt consequat tempor esse nostrud. Eu ea elit anim occaecat irure est quis do. Non magna officia consectetur est Lorem magna ea anim excepteur excepteur ea consectetur ea eiusmod."
+						}
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"testimonial_image",
+						{
+							"origin": {
+								"id": "main",
+								"url": "https://images.unsplash.com/photo-1494173853739-c21f58b16055",
+								"width": 3277,
+								"height": 4092
+							},
+							"url": "https://images.unsplash.com/photo-1494173853739-c21f58b16055?rect=0%2C408%2C3277%2C3277&w=80&h=80",
+							"width": 80,
+							"height": 80,
+							"edit": {
+								"zoom": 1,
+								"crop": {
+									"x": 0,
+									"y": 408
+								},
+								"background": "transparent"
+							},
+							"credits": null,
+							"alt": null,
+							"__TYPE__": "ImageContent",
+							"thumbnails": {}
+						}
+					],
+					[
+						"testimonial_name",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "heading3",
+									"content": {
+										"text": "Slightly"
+									}
+								}
+							]
+						}
+					],
+					[
+						"testimonial_text",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Nisi eiusmod adipisicing excepteur amet non ut aute cupidatat anim. Do incididunt ea sunt laboris veniam. Velit eu excepteur ullamco reprehenderit et do fugiat ullamco ut nulla non proident."
+									}
+								}
+							]
+						}
+					],
+					[
+						"testimonial_score",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "49",
+							"type": "Number"
+						}
+					]
+				]
+			}
+		]
+	}
+]
