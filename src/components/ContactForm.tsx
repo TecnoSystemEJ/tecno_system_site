@@ -2,9 +2,7 @@
 import React, { useState } from "react";
 import Input from "./Input";
 
-type Props = {};
-
-const ContactForm = ({}: Props) => {
+const ContactForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
