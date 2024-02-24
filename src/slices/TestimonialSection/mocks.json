@@ -7,9 +7,9 @@
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
-						"type": "paragraph",
+						"type": "heading3",
 						"content": {
-							"text": "Fugiat ipsum nisi aute irure ipsum aute ex minim."
+							"text": "While"
 						}
 					}
 				]
@@ -20,7 +20,7 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Aliquip eu ea dolor occaecat eiusmod fugiat est. Pariatur in et et ut veniam irure irure ea proident eu. Dolore dolore cupidatat quis eu minim ullamco."
+							"text": "Sint ipsum ipsum officia labore voluptate fugiat. Commodo mollit do ex eu eiusmod culpa elit excepteur. Aliquip magna proident in sint minim nulla ex cillum nisi reprehenderit velit."
 						}
 					}
 				]
@@ -62,9 +62,9 @@
 							"__TYPE__": "StructuredTextContent",
 							"value": [
 								{
-									"type": "paragraph",
+									"type": "heading4",
 									"content": {
-										"text": "Exercitation dolor eiusmod aliqua officia sit pariatur do occaecat excepteur culpa cillum minim laborum consequat."
+										"text": "Broken"
 									}
 								}
 							]
@@ -78,7 +78,7 @@
 								{
 									"type": "paragraph",
 									"content": {
-										"text": "Pariatur irure mollit reprehenderit nisi consectetur excepteur."
+										"text": "Fugiat cupidatat ut cupidatat non. Cillum pariatur elit labore ad sint excepteur laborum non sit enim. Ad id enim adipisicing laborum eu excepteur dolor labore consectetur."
 									}
 								}
 							]
