@@ -14,7 +14,7 @@ interface Props {
 
 const SliderComponent = ({ cards }: Props) => {
   return (
-    <div className="my-10 flex flex-row gap-4 bg-gray-alt w-full overflow-x-auto scroll no-scrollbar">
+    <div className="flex flex-row gap-4 bg-gray-alt w-full overflow-x-auto scroll no-scrollbar lg:grid grid-cols-3 grid-rows-2 lg:justify-between">
       {cards.map((card, index) => {
         return (
           <div key={index}>
