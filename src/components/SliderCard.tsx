@@ -11,7 +11,7 @@ interface Props {
 
 const SliderCard = ({ image, title, description }: Props) => {
   return (
-    <div className="h-[353px] max-h-[353px] max-w-[324px] gap-4 bg-gray-alt flex flex-col items-center justify-start rounded-2xl shadow-md p-4">
+    <div className="h-[353px] max-h-[353px] max-w-[324px] gap-4 bg-gray-alt flex flex-col items-center justify-start lg:border border-primary-main rounded-2xl shadow-md p-4">
       <div className="w-72 min-h-[156px] max-h-[156px] rounded-2xl overflow-hidden">
         <PrismicNextImage field={image} height={300} width={300} />
       </div>
