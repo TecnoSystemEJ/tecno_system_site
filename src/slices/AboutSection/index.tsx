@@ -24,7 +24,7 @@ const AboutSection = ({ slice }: AboutSectionProps): JSX.Element => {
         {slice.primary.company_name}
       </h2>
       <div className="flex flex-col lg:flex-row lg:gap-10 lg:mb-8">
-        <div className="hidden lg:flex rounded-2xl overflow-hidden lg:max-w-[545px] flex-1">
+        <div className="hidden lg:flex rounded-2xl overflow-hidden lg:max-w-[545px] lg:max-h-[430px] flex-1">
           <PrismicNextImage
             field={slice.primary.company_image}
             height={650}
@@ -42,7 +42,7 @@ const AboutSection = ({ slice }: AboutSectionProps): JSX.Element => {
             field={slice.primary.text}
             components={{
               paragraph: ({ children }) => (
-                <p className="font-secondary text-black text-sm font-400 lg:lowercase lg:text-base">
+                <p className="font-secondary text-black text-sm font-400 lg:normal-case lg:text-base">
                   {children}
                 </p>
               ),
