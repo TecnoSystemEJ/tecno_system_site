@@ -1,10 +1,11 @@
-import Link from "next/link";
+import { KeyTextField, LinkField } from "@prismicio/client";
+import { PrismicNextLink } from "@prismicio/next";
 import React from "react";
 
 type Props = {
-  name: string;
+  href: LinkField;
   styles: "primary" | "secondary";
-  href: string;
+  name: KeyTextField;
   buttonSecundary?: boolean;
 };
 
@@ -13,14 +14,15 @@ const Button = ({ href, styles, name, buttonSecundary }: Props) => {
     styles === "primary" ? "primary-button" : "secondary-button";
 
   return (
-    <Link
-      href={href}
-      className={`flex px-4 normal-case font-secondary
-      rounded-lg items-center ${buttonClass}
-      ${buttonSecundary ? "justify-center py-3 text-sm font-normal" : "py-1 text-xl"}`}
-    >
-      {name}
-    </Link>
+    <PrismicNextLink field={href}>
+      <div
+        className={`flex px-4 normal-case font-secondary
+        rounded-lg items-center ${buttonClass}
+        ${buttonSecundary ? "justify-center py-3 text-sm font-normal" : "py-1 text-xl"}`}
+      >
+        {name}
+      </div>
+    </PrismicNextLink>
   );
 };
 

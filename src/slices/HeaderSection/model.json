@@ -73,6 +73,24 @@
             "constraint": {},
             "thumbnails": []
           }
+        },
+        "text_card_title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Text Card Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading3"
+          }
+        },
+        "text_card_subtitle": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Text Card Subtitle",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph"
+          }
         }
       },
       "items": {
