@@ -19,8 +19,9 @@ const HeaderSection = ({ slice }: HeaderSectionProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      className="flex flex-col gap-y-5"
     >
-      <header className="flex flex-col mb-4 gap-y-7">
+      <header className="flex flex-col gap-y-5">
         <div>
           <h2 className="text-2xl font-primary text-primary-main my-3 font-400">
             {slice.primary.company_name}
