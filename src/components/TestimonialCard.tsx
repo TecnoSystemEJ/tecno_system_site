@@ -6,6 +6,9 @@ import { IoMdStar, IoMdStarHalf, IoMdStarOutline } from "react-icons/io";
 import { ImageField, NumberField, RichTextField } from "@prismicio/client";
 import { PrismicRichText } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
+// Nexxt
+
+
 
 interface Props {
   text: RichTextField;
@@ -34,7 +37,7 @@ const TestimonialCard = ({ text, score, title, image }: Props) => {
   }
 
   return (
-    <div className="flex flex-col w-full justify-center border border-primary-main py-5 rounded-xl shadow-md">
+    <div className="flex border border-primary-main py-5 rounded-xl shadow-md">
       <div className="flex gap-2 m-auto w-80">
         <div className="flex flex-col items-center justify-center">
           <div className="border border-primary-main rounded-full w-20 h-20">

@@ -16,7 +16,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4 md:mt-20">
       <h2 className="text-3xl font-primary text-primary-main my-3 font-400">
         Entre em contato
       </h2>
@@ -41,7 +41,7 @@ const ContactForm = () => {
         />
         <button
           type="submit"
-          className=" font-secondary font-normal mt-8 bg-primary-main text-gray-300 text-sm h-12 rounded-md hover:bg-primary-main transition duration-300 ease-in-out"
+          className="font-secondary font-normal mt-8 bg-primary-main text-gray-300 text-sm h-12 rounded-md hover:bg-primary-main transition duration-300 ease-in-out"
         >
           Enviar
         </button>
