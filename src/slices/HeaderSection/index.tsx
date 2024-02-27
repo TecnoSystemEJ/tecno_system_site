@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Children } from "react";
 import { Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
@@ -17,21 +17,29 @@ export type HeaderSectionProps =
 const HeaderSection = ({ slice }: HeaderSectionProps): JSX.Element => {
   return (
     <section
-
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
       <header className="flex flex-col mb-4 gap-y-7">
         <div>
-        <h2 className="text-2xl font-primary text-primary-main my-3 font-400">
-          {slice.primary.company_name}
-        </h2>
+          <h2 className="text-2xl font-primary text-primary-main my-3 font-400">
+            {slice.primary.company_name}
+          </h2>
 
-        <h1 className="text-2xl font-primary">
-          <PrismicRichText field={slice.primary.sub_title} />
-        </h1>
+          <h1 className="text-2xl font-primary">
+            <PrismicRichText
+              field={slice.primary.sub_title}
+              components={{
+                strong: ({ children }) => (
+                  <span className="text-primary-main font-bold">
+                    {children}
+                  </span>
+                ),
+              }}
+            />
+          </h1>
         </div>
-        
+
         <ul className="flex flex-col gap-2">
           {slice.items.map((item, index) => (
             <List key={index} text={item.topics} />
@@ -44,7 +52,6 @@ const HeaderSection = ({ slice }: HeaderSectionProps): JSX.Element => {
             styles="primary"
             name={slice.primary.button_text_1}
           />
-
           <Button
             href={slice.primary.button_link_2}
             styles="secondary"
@@ -62,9 +69,7 @@ const HeaderSection = ({ slice }: HeaderSectionProps): JSX.Element => {
 
       <div className="flex flex-col gap-10">
         <PrismicNextImage field={slice.primary.image_1} />
-
         <PrismicNextImage field={slice.primary.image_2} />
-
       </div>
     </section>
   );
