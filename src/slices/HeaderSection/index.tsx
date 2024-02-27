@@ -1,7 +1,10 @@
-import React, { Children } from "react";
+// Flow
+import React from "react";
+//  Prismic
 import { Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+//  Components
 import List from "@/components/List";
 import TextCard from "@/components/TextCard";
 import Button from "@/components/Button";
