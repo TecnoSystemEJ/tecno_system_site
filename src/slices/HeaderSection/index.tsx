@@ -72,8 +72,8 @@ const HeaderSection = ({ slice }: HeaderSectionProps): JSX.Element => {
       </div>
 
       <div className="flex flex-col gap-10">
-        <PrismicNextImage field={slice.primary.image_1} />
-        <PrismicNextImage field={slice.primary.image_2} />
+        <PrismicNextImage field={slice.primary.image_1} className="w-full" />
+        <PrismicNextImage field={slice.primary.image_2} className="w-full" />
       </div>
     </section>
   );
