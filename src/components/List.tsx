@@ -1,8 +1,9 @@
+import { KeyTextField } from "@prismicio/client";
 import React from "react";
 import { IoIosCheckmarkCircle } from "react-icons/io";
 
 interface Props {
-  text: string;
+  text: KeyTextField;
 }
 
 const List = ({ text }: Props) => {

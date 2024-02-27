@@ -263,6 +263,26 @@ export interface HeaderSectionSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image_2: prismic.ImageField<never>;
+
+  /**
+   * Text Card Title field in *HeaderSection → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header_section.primary.text_card_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text_card_title: prismic.TitleField;
+
+  /**
+   * Text Card Subtitle field in *HeaderSection → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header_section.primary.text_card_subtitle
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text_card_subtitle: prismic.RichTextField;
 }
 
 /**
