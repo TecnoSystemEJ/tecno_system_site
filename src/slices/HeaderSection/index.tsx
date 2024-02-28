@@ -13,7 +13,6 @@ import Button from "@/components/Button";
  */
 export type HeaderSectionProps =
   SliceComponentProps<Content.HeaderSectionSlice>;
-
 /**
  * Component for "HeaderSection" Slices.
  */
@@ -49,22 +48,17 @@ const HeaderSection = ({ slice }: HeaderSectionProps): JSX.Element => {
           ))}
         </ul>
 
-        <div className="flex space-x-4">
-          <div className="mr-2">
-            <Button
-              href={slice.primary.button_link_1}
-              styles="primary"
-              name={slice.primary.button_text_1}
-            />
-          </div>
-
-          <div className="ml-2">
-            <Button
-              href={slice.primary.button_link_2}
-              styles="secondary"
-              name={slice.primary.button_text_2}
-            />
-          </div>
+        <div className="flex gap-4">
+          <Button
+            href={slice.primary.button_link_1}
+            styles="primary"
+            name={slice.primary.button_text_1}
+          />
+          <Button
+            href={slice.primary.button_link_2}
+            styles="secondary"
+            name={slice.primary.button_text_2}
+          />
         </div>
 
       </header>
@@ -81,7 +75,7 @@ const HeaderSection = ({ slice }: HeaderSectionProps): JSX.Element => {
         <PrismicNextImage field={slice.primary.image_2} className="w-full lg:w-1/3" />
         <PrismicNextImage field={slice.primary.image_3} className="hidden lg:block lg:w-1/3" />
       </div>
-
+      
     </section>
   );
 };
