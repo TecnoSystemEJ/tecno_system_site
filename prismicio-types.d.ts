@@ -75,6 +75,16 @@ export type AllDocumentTypes = HomeDocument;
  */
 export interface AboutSectionSliceDefaultPrimary {
   /**
+   * Company Image field in *AboutSection → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_section.primary.company_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  company_image: prismic.ImageField<never>;
+
+  /**
    * Company Name field in *AboutSection → Primary*
    *
    * - **Field Type**: Text
@@ -113,6 +123,26 @@ export interface AboutSectionSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   text_card_subtitle: prismic.RichTextField;
+
+  /**
+   * Paragraph Text Card Title field in *AboutSection → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_section.primary.paragraph_text_card_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  paragraph_text_card_title: prismic.TitleField;
+
+  /**
+   * Paragraph Text Card Subtitle field in *AboutSection → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_section.primary.paragraph_text_card_subtitle
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  paragraph_text_card_subtitle: prismic.RichTextField;
 }
 
 /**

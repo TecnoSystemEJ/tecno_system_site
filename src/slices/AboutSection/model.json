@@ -12,6 +12,14 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
+        "company_image": {
+          "type": "Image",
+          "config": {
+            "label": "Company Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
         "company_name": {
           "type": "Text",
           "config": {
@@ -44,6 +52,24 @@
             "placeholder": "",
             "allowTargetBlank": true,
             "single": "paragraph"
+          }
+        },
+        "paragraph_text_card_title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Paragraph Text Card Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading3"
+          }
+        },
+        "paragraph_text_card_subtitle": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Paragraph Text Card Subtitle",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         }
       },
