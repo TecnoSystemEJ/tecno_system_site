@@ -16,7 +16,7 @@ export type AboutSectionProps = SliceComponentProps<Content.AboutSectionSlice>;
 const AboutSection = ({ slice }: AboutSectionProps): JSX.Element => {
   return (
     <section
-      className="flex flex-col overflow-x-hidden w-full my-9 lg:w-[1200px] gap-8"
+      className="flex flex-col w-full my-9 gap-8"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
@@ -24,14 +24,14 @@ const AboutSection = ({ slice }: AboutSectionProps): JSX.Element => {
         {slice.primary.company_name}
       </h2>
       <div className="flex flex-col lg:flex-row lg:gap-10 lg:mb-8">
-        <div className="hidden lg:flex rounded-2xl overflow-hidden lg:max-w-[545px] lg:max-h-[430px] flex-1">
+        <div className="hidden lg:flex rounded-2xl overflow-hidden lg:flex-1 lg:max-h-[430px] ">
           <PrismicNextImage
             field={slice.primary.company_image}
             height={650}
             width={600}
           />
         </div>
-        <div className="flex flex-col flex-1 gap-4 lg:max-w-[545px]">
+        <div className="flex flex-col flex-1 gap-4 lg:flex-1">
           <div className="hidden lg:flex ">
             <TextCard
               title={slice.primary.paragraph_text_card_title}
@@ -54,7 +54,7 @@ const AboutSection = ({ slice }: AboutSectionProps): JSX.Element => {
             width={430}
             height={10}
             className="hidden lg:flex"
-          ></Image>
+          />
         </div>
       </div>
       <TextCard

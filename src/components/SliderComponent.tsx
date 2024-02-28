@@ -14,16 +14,15 @@ interface Props {
 
 const SliderComponent = ({ cards }: Props) => {
   return (
-    <div className="flex flex-row gap-4 bg-gray-alt w-full overflow-x-auto scroll no-scrollbar lg:grid grid-cols-3 grid-rows-2 lg:justify-between">
+    <div className="flex flex-row w-full lg:justify-between py-2 lg:flex-wrap gap-4 bg-gray-alt overflow-x-auto lg:overflow-hidden scroll no-scrollbar">
       {cards.map((card, index) => {
         return (
-          <div key={index}>
-            <SliderCard
-              image={card.image}
-              title={card.title}
-              description={card.description}
-            />
-          </div>
+          <SliderCard
+            image={card.image}
+            title={card.title}
+            description={card.description}
+            key={index}
+          />
         );
       })}
     </div>
