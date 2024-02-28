@@ -49,7 +49,7 @@ const HeaderSection = ({ slice }: HeaderSectionProps): JSX.Element => {
           ))}
         </ul>
 
-        <div className="flex gap-4">
+        <div className="flex flex-row items-center gap-4 ">
           <Button
             href={slice.primary.button_link_1}
             styles="primary"
