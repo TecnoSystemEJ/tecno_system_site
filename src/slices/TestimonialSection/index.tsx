@@ -25,7 +25,7 @@ const TestimonialSection = ({
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="flex flex-col w-full gap-10 relative"
+      className="flex flex-col w-full gap-8 md:gap-16 mb-8 md:mb-16 relative"
     >
       <TextCard
         title={slice.primary.text_card_title}
@@ -41,7 +41,7 @@ const TestimonialSection = ({
         />
       </div>
 
-      <div className="hidden lg:flex absolute left-[-20%] bottom-80">
+      <div className="hidden lg:flex absolute left-[-20%] bottom-[380px]">
         <Image
           src="./linetech2.svg"
           width={735}
@@ -50,7 +50,7 @@ const TestimonialSection = ({
         />
       </div>
 
-      <div className="w-full md:justify-between flex flex-row flex-wrap lg:gap-y-5 lg:gap-x-8 gap-y-8">
+      <div className="w-full sm:justify-between flex flex-row flex-wrap lg:gap-y-5 lg:gap-x-8 gap-y-8">
         {slice.items.map((item, index) => (
           <TestimonialCard
             title={item.title}
