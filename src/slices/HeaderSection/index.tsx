@@ -22,15 +22,14 @@ const HeaderSection = ({ slice }: HeaderSectionProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="flex flex-col gap-8 md:gap-16 mb-8 md:mb-16"
-    >
+      className="flex flex-col gap-8 md:gap-16 mb-8 md:mb-16">
       <header className="flex flex-col gap-y-5">
         <div>
-          <h2 className="text-2xl font-primary text-primary-main my-3 lg:text-[32px]">
+          <h2 className="text-2xl font-primary text-primary-main my-3 lg:text-3xl">
             {slice.primary.company_name}
           </h2>
 
-          <h1 className="text-[28px] font-primary lg:text-[58px]">
+          <h1 className="text-3xl font-primary lg:text-6xl">
             <PrismicRichText
               field={slice.primary.sub_title}
               components={{
@@ -43,7 +42,6 @@ const HeaderSection = ({ slice }: HeaderSectionProps): JSX.Element => {
             />
           </h1>
         </div>
-
 
         <ul className="flex flex-col gap-2">
           {slice.items.map((item, index) => (
@@ -68,7 +66,6 @@ const HeaderSection = ({ slice }: HeaderSectionProps): JSX.Element => {
             />
           </div>
         </div>
-
 
       </header>
 
