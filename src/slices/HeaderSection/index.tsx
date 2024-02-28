@@ -26,11 +26,11 @@ const HeaderSection = ({ slice }: HeaderSectionProps): JSX.Element => {
     >
       <header className="flex flex-col gap-y-5">
         <div>
-          <h2 className="text-2xl font-primary text-primary-main my-3 font-400">
+          <h2 className="text-2xl font-primary text-primary-main my-3 lg:text-[32px]">
             {slice.primary.company_name}
           </h2>
 
-          <h1 className="text-2xl font-primary">
+          <h1 className="text-[28px] font-primary lg:text-[58px]">
             <PrismicRichText
               field={slice.primary.sub_title}
               components={{
@@ -44,24 +44,32 @@ const HeaderSection = ({ slice }: HeaderSectionProps): JSX.Element => {
           </h1>
         </div>
 
+
         <ul className="flex flex-col gap-2">
           {slice.items.map((item, index) => (
             <List key={index} text={item.topics} />
           ))}
         </ul>
 
-        <div className="flex flex-row justify-between">
-          <Button
-            href={slice.primary.button_link_1}
-            styles="primary"
-            name={slice.primary.button_text_1}
-          />
-          <Button
-            href={slice.primary.button_link_2}
-            styles="secondary"
-            name={slice.primary.button_text_2}
-          />
+        <div className="flex space-x-4">
+          <div className="mr-2">
+            <Button
+              href={slice.primary.button_link_1}
+              styles="primary"
+              name={slice.primary.button_text_1}
+            />
+          </div>
+
+          <div className="ml-2">
+            <Button
+              href={slice.primary.button_link_2}
+              styles="secondary"
+              name={slice.primary.button_text_2}
+            />
+          </div>
         </div>
+
+
       </header>
 
       <div className="flex flex-col gap-y-8">
@@ -71,10 +79,12 @@ const HeaderSection = ({ slice }: HeaderSectionProps): JSX.Element => {
         />
       </div>
 
-      <div className="flex flex-col gap-10">
-        <PrismicNextImage field={slice.primary.image_1} className="w-full" />
-        <PrismicNextImage field={slice.primary.image_2} className="w-full" />
+      <div className="flex flex-col gap-10 lg:flex-row">
+        <PrismicNextImage field={slice.primary.image_1} className="w-full lg:w-1/3" />
+        <PrismicNextImage field={slice.primary.image_2} className="w-full lg:w-1/3" />
+        <PrismicNextImage field={slice.primary.image_3} className="hidden lg:block lg:w-1/3" />
       </div>
+
     </section>
   );
 };
