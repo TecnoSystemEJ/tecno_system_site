@@ -41,7 +41,7 @@ const TestimonialSection = ({
         />
       </div>
 
-      <div className="hidden lg:flex absolute left-[-20%] bottom-[380px]">
+      <div className="hidden lg:flex absolute left-[-20%] bottom-[380px] -z-50">
         <Image
           src="./linetech2.svg"
           width={735}
