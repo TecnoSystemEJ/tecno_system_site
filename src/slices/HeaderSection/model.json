@@ -74,6 +74,14 @@
             "thumbnails": []
           }
         },
+        "image_3": {
+          "type": "Image",
+          "config": {
+            "label": "Image 3",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
         "text_card_title": {
           "type": "StructuredText",
           "config": {

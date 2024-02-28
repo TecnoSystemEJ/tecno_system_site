@@ -295,6 +295,16 @@ export interface HeaderSectionSliceDefaultPrimary {
   image_2: prismic.ImageField<never>;
 
   /**
+   * Image 3 field in *HeaderSection → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header_section.primary.image_3
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_3: prismic.ImageField<never>;
+
+  /**
    * Text Card Title field in *HeaderSection → Primary*
    *
    * - **Field Type**: Title
