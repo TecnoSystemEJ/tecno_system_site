@@ -16,7 +16,7 @@ export type AboutSectionProps = SliceComponentProps<Content.AboutSectionSlice>;
 const AboutSection = ({ slice }: AboutSectionProps): JSX.Element => {
   return (
     <section
-      className="flex flex-col w-full my-9 gap-8"
+      className="flex flex-col w-full gap-8 md:gap-16 mb-8 md:mb-16"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >

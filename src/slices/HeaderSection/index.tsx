@@ -22,7 +22,7 @@ const HeaderSection = ({ slice }: HeaderSectionProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="flex flex-col gap-y-5"
+      className="flex flex-col gap-8 md:gap-16 mb-8 md:mb-16"
     >
       <header className="flex flex-col gap-y-5">
         <div>

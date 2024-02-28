@@ -7,6 +7,7 @@ import { SliceComponentProps } from "@prismicio/react";
 import TextCard from "@/components/TextCard";
 import TestimonialCard from "@/components/TestimonialCard";
 import ContactForm from "@/components/ContactForm";
+import Image from "next/image";
 
 /**
  * Props for `TestimonialSection`.
@@ -24,13 +25,32 @@ const TestimonialSection = ({
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="flex flex-col gap-10"
+      className="flex flex-col w-full gap-8 md:gap-16 mb-8 md:mb-16 relative"
     >
       <TextCard
         title={slice.primary.text_card_title}
         subtitle={slice.primary.text_card_subtitle}
       />
-      <div className="flex flex-col gap-y-8">
+
+      <div className="hidden lg:flex absolute right-[-20%] -top-10">
+        <Image
+          src="./linetech.svg"
+          width={735}
+          height={151}
+          alt="Picture of the author"
+        />
+      </div>
+
+      <div className="hidden lg:flex absolute left-[-20%] bottom-[380px] -z-50">
+        <Image
+          src="./linetech2.svg"
+          width={735}
+          height={151}
+          alt="Picture of the author"
+        />
+      </div>
+
+      <div className="w-full sm:justify-between flex flex-row flex-wrap lg:gap-y-5 lg:gap-x-8 gap-y-8">
         {slice.items.map((item, index) => (
           <TestimonialCard
             title={item.title}
@@ -41,6 +61,7 @@ const TestimonialSection = ({
           />
         ))}
       </div>
+
       <ContactForm />
     </section>
   );
