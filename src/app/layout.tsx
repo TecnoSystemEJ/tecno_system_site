@@ -27,7 +27,7 @@ export default function RootLayout({
       className={`${inter.variable} ${righteous.variable} text-black m-0 p-0 bg-gray-alt`}
     >
       <body>
-        <div className="mx-auto container px-4 uppercase w-full">
+        <div className="mx-auto container overflow-hidden px-4 uppercase w-full">
           {children}
         </div>
       </body>

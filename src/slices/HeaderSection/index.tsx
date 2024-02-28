@@ -21,7 +21,8 @@ const HeaderSection = ({ slice }: HeaderSectionProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="flex flex-col gap-8 md:gap-16 mb-8 md:mb-16">
+      className="flex flex-col gap-8 md:gap-16 mb-8 md:mb-16"
+    >
       <header className="flex flex-col gap-y-5">
         <div>
           <h2 className="text-2xl font-primary text-primary-main my-3 lg:text-3xl">
@@ -60,7 +61,6 @@ const HeaderSection = ({ slice }: HeaderSectionProps): JSX.Element => {
             name={slice.primary.button_text_2}
           />
         </div>
-
       </header>
 
       <div className="flex flex-col gap-y-8">
@@ -70,12 +70,20 @@ const HeaderSection = ({ slice }: HeaderSectionProps): JSX.Element => {
         />
       </div>
 
-      <div className="flex flex-col gap-10 lg:flex-row">
-        <PrismicNextImage field={slice.primary.image_1} className="w-full lg:w-1/3" />
-        <PrismicNextImage field={slice.primary.image_2} className="w-full lg:w-1/3" />
-        <PrismicNextImage field={slice.primary.image_3} className="hidden lg:block lg:w-1/3" />
+      <div className="flex flex-col gap-5 justify-between md:flex-row">
+        <PrismicNextImage
+          field={slice.primary.image_1}
+          className="w-full md:w-[48%] lg:w-[32%]"
+        />
+        <PrismicNextImage
+          field={slice.primary.image_2}
+          className="w-full md:w-[48%] lg:w-[32%]"
+        />
+        <PrismicNextImage
+          field={slice.primary.image_3}
+          className="hidden lg:block lg:w-[32%]"
+        />
       </div>
-      
     </section>
   );
 };
