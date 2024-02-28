@@ -8,8 +8,6 @@ import { PrismicRichText } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
 // Nexxt
 
-
-
 interface Props {
   text: RichTextField;
   score: NumberField | null;
@@ -37,7 +35,7 @@ const TestimonialCard = ({ text, score, title, image }: Props) => {
   }
 
   return (
-    <div className="flex border border-primary-main py-5 rounded-xl shadow-md">
+    <div className="flex border w-full lg:w-[30%] border-primary-main py-5 rounded-xl shadow-md">
       <div className="flex gap-2 m-auto w-80">
         <div className="flex flex-col items-center justify-center">
           <div className="border border-primary-main rounded-full w-20 h-20">

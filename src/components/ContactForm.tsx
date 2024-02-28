@@ -16,7 +16,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="flex flex-col gap-4 md:mt-20">
+    <div className="flex flex-col gap-4 md:mt-10">
       <h2 className="text-3xl font-primary text-primary-main my-3 font-400">
         Entre em contato
       </h2>

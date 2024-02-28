@@ -2,6 +2,7 @@ import React from "react";
 // Styles
 import "./globals.css";
 import { Inter, Righteous } from "next/font/google";
+import Image from "next/image";
 
 const inter = Inter({
   subsets: ["latin"],
