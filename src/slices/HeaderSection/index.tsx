@@ -13,7 +13,6 @@ import Button from "@/components/Button";
  */
 export type HeaderSectionProps =
   SliceComponentProps<Content.HeaderSectionSlice>;
-
 /**
  * Component for "HeaderSection" Slices.
  */
@@ -26,11 +25,11 @@ const HeaderSection = ({ slice }: HeaderSectionProps): JSX.Element => {
     >
       <header className="flex flex-col gap-y-5">
         <div>
-          <h2 className="text-2xl font-primary text-primary-main my-3 font-400">
+          <h2 className="text-2xl font-primary text-primary-main my-3 lg:text-3xl">
             {slice.primary.company_name}
           </h2>
 
-          <h1 className="text-2xl font-primary">
+          <h1 className="text-3xl font-primary lg:text-6xl">
             <PrismicRichText
               field={slice.primary.sub_title}
               components={{
@@ -50,7 +49,7 @@ const HeaderSection = ({ slice }: HeaderSectionProps): JSX.Element => {
           ))}
         </ul>
 
-        <div className="flex flex-row justify-between">
+        <div className="flex flex-row items-center gap-4 ">
           <Button
             href={slice.primary.button_link_1}
             styles="primary"
@@ -71,9 +70,19 @@ const HeaderSection = ({ slice }: HeaderSectionProps): JSX.Element => {
         />
       </div>
 
-      <div className="flex flex-col gap-10">
-        <PrismicNextImage field={slice.primary.image_1} className="w-full" />
-        <PrismicNextImage field={slice.primary.image_2} className="w-full" />
+      <div className="flex flex-col gap-5 justify-between md:flex-row">
+        <PrismicNextImage
+          field={slice.primary.image_1}
+          className="w-full md:w-[48%] lg:w-[32%]"
+        />
+        <PrismicNextImage
+          field={slice.primary.image_2}
+          className="w-full md:w-[48%] lg:w-[32%]"
+        />
+        <PrismicNextImage
+          field={slice.primary.image_3}
+          className="hidden lg:block lg:w-[32%]"
+        />
       </div>
     </section>
   );
