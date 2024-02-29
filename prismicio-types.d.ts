@@ -4,6 +4,63 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
+/**
+ * Item in *footer → social*
+ */
+export interface FooterDocumentDataSocialItem {
+  /**
+   * label field in *footer → social*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.social[].label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label: prismic.KeyTextField;
+
+  /**
+   * link field in *footer → social*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.social[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+}
+
+/**
+ * Content for footer documents
+ */
+interface FooterDocumentData {
+  /**
+   * social field in *footer*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.social[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  social: prismic.GroupField<Simplify<FooterDocumentDataSocialItem>>;
+}
+
+/**
+ * footer document from Prismic
+ *
+ * - **API ID**: `footer`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type FooterDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<FooterDocumentData>,
+    "footer",
+    Lang
+  >;
+
 type HomeDocumentDataSlicesSlice =
   | HeaderSectionSlice
   | TestimonialSectionSlice
@@ -68,7 +125,64 @@ interface HomeDocumentData {
 export type HomeDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
 
-export type AllDocumentTypes = HomeDocument;
+/**
+ * Item in *NavBar → navigation*
+ */
+export interface NavbarDocumentDataNavigationItem {
+  /**
+   * label field in *NavBar → navigation*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navbar.navigation[].label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label: prismic.KeyTextField;
+
+  /**
+   * link field in *NavBar → navigation*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navbar.navigation[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+}
+
+/**
+ * Content for NavBar documents
+ */
+interface NavbarDocumentData {
+  /**
+   * navigation field in *NavBar*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navbar.navigation[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  navigation: prismic.GroupField<Simplify<NavbarDocumentDataNavigationItem>>;
+}
+
+/**
+ * NavBar document from Prismic
+ *
+ * - **API ID**: `navbar`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type NavbarDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<NavbarDocumentData>,
+    "navbar",
+    Lang
+  >;
+
+export type AllDocumentTypes = FooterDocument | HomeDocument | NavbarDocument;
 
 /**
  * Primary content in *AboutSection → Primary*
@@ -480,9 +594,15 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      FooterDocument,
+      FooterDocumentData,
+      FooterDocumentDataSocialItem,
       HomeDocument,
       HomeDocumentData,
       HomeDocumentDataSlicesSlice,
+      NavbarDocument,
+      NavbarDocumentData,
+      NavbarDocumentDataNavigationItem,
       AllDocumentTypes,
       AboutSectionSlice,
       AboutSectionSliceDefaultPrimary,

@@ -2,6 +2,8 @@ import React from "react";
 // Styles
 import "./globals.css";
 import { Inter, Righteous } from "next/font/google";
+import Footer from "@/components/Footer";
+import NavBar from "@/components/NavBar";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -27,9 +29,11 @@ export default function RootLayout({
       className={`${inter.variable} ${righteous.variable} text-black m-0 p-0 bg-gray-alt`}
     >
       <body>
+        <NavBar />
         <div className="mx-auto container px-4 uppercase w-full">
           {children}
         </div>
+        <Footer />
       </body>
     </html>
   );
