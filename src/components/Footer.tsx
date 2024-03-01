@@ -21,8 +21,8 @@ const Footer = async () => {
 
   return (
     <footer className="flex w-full py-8 bg-primary-main ">
-      <div className="md:mx-auto w-full h-full md:container sm:flex flex-col p-4">
-        <div className="flex flex-col">
+      <div className="flex flex-row justify-between md:mx-auto w-full h-full md:container sm:flex  p-4">
+        <div className="flex flex-col w-1/2">
           {footer.data.social.map(({ label, link, icon }, index) => (
             <PrismicNextLink
               field={link}
@@ -34,6 +34,7 @@ const Footer = async () => {
             </PrismicNextLink>
           ))}
         </div>
+        <div className="flex flex-col w-1/2 p-10">tesda</div>
       </div>
     </footer>
   );
