@@ -1,34 +1,31 @@
 "use client";
 import React, { useRef, useState } from "react";
 import Input from "./Input";
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 
 const ContactForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const form = useRef<HTMLFormElement>(null)
+  const form = useRef<HTMLFormElement>(null);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
-    if(form.current) {
-    emailjs
-      .sendForm(
-        'GmailMessage', 
-        'template_axuv8sl', 
-        form.current, {
-        publicKey: 'DgwYIKMMgJX-7vHOr',
-      })
-      .then(
-        () => {
-          alert('Mensagem enviada!');
-        },
-        (error) => {
-          alert(error.text);
-        },
-      );
-      }
+
+    if (form.current) {
+      emailjs
+        .sendForm("service_k7o1761", "template_0me0my8", form.current, {
+          publicKey: "a0cdWPbQf1dnIM28Y",
+        })
+        .then(
+          () => {
+            alert("Mensagem enviada!");
+          },
+          (error) => {
+            alert(error.text);
+          },
+        );
+    }
     setName("");
     setEmail("");
     setPhone("");
@@ -40,11 +37,11 @@ const ContactForm = () => {
         Entre em contato
       </h2>
 
-      <form  ref={form} onSubmit={handleSubmit} className="flex flex-col gap-4">
+      <form ref={form} onSubmit={handleSubmit} className="flex flex-col gap-4">
         <Input
           type="text"
           placeholder="Nome"
-          name = 'name'
+          name="name"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
