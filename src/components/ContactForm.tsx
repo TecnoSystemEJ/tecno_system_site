@@ -35,7 +35,7 @@ const ContactForm = () => {
         />
         <Input
           type="phone"
-          placeholder="(75) 999120-2371"
+          placeholder="Seu melhor número de contato"
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
         />

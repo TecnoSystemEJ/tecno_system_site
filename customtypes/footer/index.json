@@ -26,6 +26,15 @@
                 "placeholder": "",
                 "select": null
               }
+            },
+            "icon": {
+              "type": "Select",
+              "config": {
+                "label": "Icon",
+                "placeholder": "",
+                "options": ["1", "2", "3", "4"],
+                "default_value": "1"
+              }
             }
           }
         }
