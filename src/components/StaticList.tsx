@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import { NavbarDocumentData } from "../../prismicio-types";
 import { PrismicLink } from "@prismicio/react";
 
