@@ -18,8 +18,6 @@ const Footer = async () => {
   const client = createClient();
   const footer = await client.getSingle("footer");
 
-  console.log(ICONS_MAP["1"]);
-
   return (
     <footer className="flex w-full py-8 bg-primary-main ">
       <div className="flex flex-row justify-between md:mx-auto w-full h-full md:container p-4">
