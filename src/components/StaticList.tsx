@@ -1,26 +1,27 @@
 import React from "react";
 import Link from "next/link";
+import { NavbarDocumentData } from "../../prismicio-types";
+import { PrismicLink } from "@prismicio/react";
 
 interface props {
   ulStyles: string;
   liStyles: string;
   handleNavClick?: () => void;
+  navigation: NavbarDocumentData;
 }
 
-const navigation = [
-  ["inicio", ""],
-  ["contato", ""],
-  ["serviços", ""],
-  ["sobre a empresa", ""],
-];
-
-const NavBarListMobile = ({ ulStyles, liStyles, handleNavClick }: props) => {
+const NavBarListMobile = ({
+  ulStyles,
+  liStyles,
+  handleNavClick,
+  navigation,
+}: props) => {
   return (
     <ul className={ulStyles}>
-      {navigation.map((pair, index) => {
+      {navigation.navigation.map(({ label, link }, index) => {
         return (
           <li key={index} className={liStyles} onClick={handleNavClick}>
-            <Link href={pair[1]}>{pair[0]}</Link>
+            <PrismicLink field={link}>{label}</PrismicLink>
           </li>
         );
       })}
