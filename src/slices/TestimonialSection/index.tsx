@@ -1,4 +1,3 @@
-// React
 import React from "react";
 // Prismic
 import { Content } from "@prismicio/client";
@@ -25,32 +24,14 @@ const TestimonialSection = ({
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="flex flex-col w-full gap-8 md:gap-16 mb-8 md:mb-16 relative"
+      className="flex flex-col w-full gap-8 md:gap-16 mb-8 md:mb-16 "
     >
       <TextCard
         title={slice.primary.text_card_title}
         subtitle={slice.primary.text_card_subtitle}
       />
 
-      <div className="hidden lg:flex absolute right-[-20%] -top-10">
-        <Image
-          src="./linetech.svg"
-          width={735}
-          height={151}
-          alt="Picture of the author"
-        />
-      </div>
-
-      <div className="hidden lg:flex absolute left-[-20%] bottom-[380px] -z-50">
-        <Image
-          src="./linetech2.svg"
-          width={735}
-          height={151}
-          alt="Picture of the author"
-        />
-      </div>
-
-      <div className="w-full sm:justify-between flex flex-row flex-wrap lg:gap-y-5 lg:gap-x-8 gap-y-8">
+      <div className="w-full sm:justify-between flex flex-row flex-1 flex-wrap lg:gap-y-5 lg:gap-x-8 gap-y-8 relative">
         {slice.items.map((item, index) => (
           <TestimonialCard
             title={item.title}
@@ -60,8 +41,22 @@ const TestimonialSection = ({
             image={item.image}
           />
         ))}
-      </div>
+        <Image
+          src="./linetech.svg"
+          width={512}
+          height={151}
+          alt="Techline"
+          className="absolute right-0 -top-40 -z-10"
+        />
 
+        <Image
+          src="./linetech2.svg"
+          width={512}
+          height={151}
+          alt="Techline"
+          className="absolute left-0 -bottom-20 -z-50"
+        />
+      </div>
       <ContactForm />
     </section>
   );
