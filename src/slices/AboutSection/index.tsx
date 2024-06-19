@@ -42,7 +42,7 @@ const AboutSection = ({ slice }: AboutSectionProps): JSX.Element => {
             field={slice.primary.text}
             components={{
               paragraph: ({ children }) => (
-                <p className="font-secondary text-black text-sm font-400 lg:normal-case lg:text-base">
+                <p className="font-secondary text-black text-sm font-light lg:normal-case lg:text-base">
                   {children}
                 </p>
               ),
