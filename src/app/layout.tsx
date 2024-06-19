@@ -36,7 +36,7 @@ export default async function RootLayout({
     >
       <body>
         <NavBar navBar={navBar} />
-        <div className="mx-auto container overflow-hidden px-4 uppercase w-full">
+        <div className="mx-auto container px-4 uppercase w-full">
           {children}
         </div>
         <Footer />
