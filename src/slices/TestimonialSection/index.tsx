@@ -46,7 +46,7 @@ const TestimonialSection = ({
           width={512}
           height={151}
           alt="Techline"
-          className="hidden lg:flex absolute right-0 -top-40 -z-10"
+          className="hidden lg:flex absolute right-0 -right-48 -top-40 -z-10"
         />
 
         <Image
@@ -54,7 +54,7 @@ const TestimonialSection = ({
           width={512}
           height={151}
           alt="Techline"
-          className="hidden lg:flex absolute left-0 -bottom-20 -z-50"
+          className="hidden lg:flex absolute left-0 -left-48 -bottom-28 -z-50"
         />
       </div>
       <ContactForm />

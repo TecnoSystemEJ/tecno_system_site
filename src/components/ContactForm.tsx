@@ -40,28 +40,28 @@ const ContactForm = () => {
       <form ref={form} onSubmit={handleSubmit} className="flex flex-col gap-4">
         <Input
           type="text"
-          placeholder="Nome"
+          placeholder="Seu nome"
           name="name"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
         <Input
           type="email"
-          placeholder="Email"
+          placeholder="Seu e-mail"
           value={email}
           name="email"
           onChange={(e) => setEmail(e.target.value)}
         />
         <Input
           type="phone"
-          placeholder="(99) 9 9999-9999"
+          placeholder="Seu número"
           value={phone}
           name="phone"
           onChange={(e) => setPhone(e.target.value)}
         />
         <button
           type="submit"
-          className="font-secondary font-normal mt-8 bg-primary-main text-gray-300 text-sm h-12 rounded-md hover:bg-primary-main transition duration-300 ease-in-out"
+          className="font-secondary font-normal mt-2 bg-primary-main text-gray-300 text-lg h-12 rounded-md hover:bg-primary-main transition duration-300 ease-in-out"
         >
           Enviar
         </button>
