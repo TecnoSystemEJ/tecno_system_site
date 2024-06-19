@@ -10,12 +10,12 @@ interface Props {
 const TextCard = ({ title, subtitle }: Props) => {
   return (
     <div className="uppercase flex h-16">
-      <div className="flex items-right text-base lg:text-xl justify-center h-16 flex-grow flex-col text-black font-secondary pl-2 border-l-[3px] border-primary-main border-solid">
+      <div className="font-secondary flex items-right text-base lg:text-xl justify-center h-16 flex-grow flex-col text-black font-secondary pl-2 border-l-[3px] border-primary-main border-solid">
         <PrismicRichText
           field={title}
           components={{
             heading3: ({ children }) => (
-              <h3 className="font-bold">{children}</h3>
+              <h3 className="font-semibold">{children}</h3>
             ),
           }}
         />
