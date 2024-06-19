@@ -29,19 +29,18 @@ const HeaderSection = ({ slice }: HeaderSectionProps): JSX.Element => {
             {slice.primary.company_name}
           </h2>
 
-          <PrismicRichText
-            field={slice.primary.sub_title}
-            components={{
-              strong: ({ children }) => (
-                <span className="text-primary-main font-bold">{children}</span>
-              ),
-              heading1: ({ children }) => (
-                <h1 className="text-3xl font-primary lg:text-6xl">
-                  {children}
-                </h1>
-              ),
-            }}
-          />
+          <h1 className="text-3xl font-primary lg:text-6xl">
+            <PrismicRichText
+              field={slice.primary.sub_title}
+              components={{
+                strong: ({ children }) => (
+                  <span className="text-primary-main font-bold">
+                    {children}
+                  </span>
+                ),
+              }}
+            />
+          </h1>
         </div>
 
         <ul className="flex flex-col gap-2">
@@ -71,7 +70,7 @@ const HeaderSection = ({ slice }: HeaderSectionProps): JSX.Element => {
         />
       </div>
 
-      <div className="flex flex-col gap-5 justify-between md:flex-row">
+      <div className="flex flex-col gap-12 justify-between md:flex-row mb-8">
         <PrismicNextImage
           field={slice.primary.image_1}
           className="w-full md:w-[48%] lg:w-[32%]"

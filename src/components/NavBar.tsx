@@ -16,9 +16,9 @@ const NavBar = ({ navBar }: NavBarProps) => {
       setNav(!nav);
     };
     return (
-      <nav className="flex flex-col  shadow-lg border border-gray-200 bg-gray-alt md:border-none md:shadow-none md:container md:mx-auto md:py-10">
+      <nav className="flex flex-col shadow-lg border border-gray-200 bg-gray-alt md:border-none md:shadow-none md:container md:mx-auto md:py-10">
         <div className="w-full flex justify-between items-center px-5 py-2 ">
-          <div className="md:w-40 w-10 relative md:pt-32 pt-10">
+        <div className="md:w-40 w-10 relative md:pt-32 pt-10 md:-ml-6">
             <Image
               src="/images/logots01.svg"
               alt="ts logo"
@@ -28,16 +28,16 @@ const NavBar = ({ navBar }: NavBarProps) => {
             />
           </div>
           <button className="md:hidden" onClick={handleNavClick}>
-            <Image
+           <Image
               src="/images/Vector.svg"
               alt="nem sei"
               height={45}
               width={45}
-            />
+            /> 
           </button>
           <StaticLsit
             ulStyles="hidden md:flex justify-between gap-6 lg:text-[20px] md:text-sm font-secondary font-[600] uppercase"
-            liStyles="flex justify-center items-center px-4 rounded-2xl hover:border-red-600 border border-transparent"
+            liStyles="flex justify-center items-center px-4 rounded-2xl hover:underline hover:text-red-600 border border-transparent"
             navigation={navBar.data}
           />
         </div>
