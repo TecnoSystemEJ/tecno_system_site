@@ -29,7 +29,6 @@ const Footer = async () => {
               key={index}
             >
               <div className="">{ICONS_MAP[icon]}</div>
-
               <div className="flex flex-row gap-5">{label}</div>
             </PrismicNextLink>
           ))}
