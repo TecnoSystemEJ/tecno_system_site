@@ -5,6 +5,64 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 /**
+ * Item in *FloatWpp → whatsapp*
+ */
+export interface FloatwppDocumentDataWhatsappItem {
+  /**
+   * link field in *FloatWpp → whatsapp*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: floatwpp.whatsapp[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+
+  /**
+   * icon field in *FloatWpp → whatsapp*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: 1
+   * - **API ID Path**: floatwpp.whatsapp[].icon
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  icon: prismic.SelectField<"1" | "0", "filled">;
+}
+
+/**
+ * Content for FloatWpp documents
+ */
+interface FloatwppDocumentData {
+  /**
+   * whatsapp field in *FloatWpp*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: floatwpp.whatsapp[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  whatsapp: prismic.GroupField<Simplify<FloatwppDocumentDataWhatsappItem>>;
+}
+
+/**
+ * FloatWpp document from Prismic
+ *
+ * - **API ID**: `floatwpp`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type FloatwppDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<FloatwppDocumentData>,
+    "floatwpp",
+    Lang
+  >;
+
+/**
  * Item in *footer → social*
  */
 export interface FooterDocumentDataSocialItem {
@@ -193,7 +251,11 @@ export type NavbarDocument<Lang extends string = string> =
     Lang
   >;
 
-export type AllDocumentTypes = FooterDocument | HomeDocument | NavbarDocument;
+export type AllDocumentTypes =
+  | FloatwppDocument
+  | FooterDocument
+  | HomeDocument
+  | NavbarDocument;
 
 /**
  * Primary content in *AboutSection → Primary*
@@ -605,6 +667,9 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      FloatwppDocument,
+      FloatwppDocumentData,
+      FloatwppDocumentDataWhatsappItem,
       FooterDocument,
       FooterDocumentData,
       FooterDocumentDataSocialItem,
