@@ -5,6 +5,7 @@ import { Inter, Righteous } from "next/font/google";
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
 import { createClient } from "@/prismicio";
+import FloatIcon from "@/components/FloatIcon";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -27,7 +28,6 @@ export default async function RootLayout({
   const client = createClient();
   const navBar = await client.getSingle("navbar");
 
-  console.log(navBar);
 
   return (
     <html
@@ -36,10 +36,11 @@ export default async function RootLayout({
     >
       <body>
         <NavBar navBar={navBar} />
+        <FloatIcon/>
         <div className="mx-auto container px-4 uppercase w-full">
           {children}
         </div>
-        <Footer />
+        <Footer/>
       </body>
     </html>
   );

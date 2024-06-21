@@ -61,8 +61,7 @@ const ContactForm = () => {
         />
         <button
           type="submit"
-          className="font-secondary font-normal mt-2 bg-primary-main text-gray-300 text-lg h-12 rounded-md hover:bg-primary-main transition duration-300 ease-in-out"
-        >
+          className="font-secondary font-normal mt-2 bg-primary-main text-gray-300 text-lg h-12 rounded-md hover:bg-primary-main hover:opacity-70 transition duration-300 ease-in-out">
           Enviar
         </button>
       </form>
