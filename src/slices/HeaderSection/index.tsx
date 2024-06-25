@@ -9,13 +9,13 @@ import List from "@/components/List";
 import TextCard from "@/components/TextCard";
 import Button from "@/components/Button";
 /**
- * Props for `HeaderSection`.
+ * Props for HeaderSection.
  */
-export type HeaderSectionProps =
-  SliceComponentProps<Content.HeaderSectionSlice>;
+export type HeaderSectionProps = SliceComponentProps<Content.HeaderSectionSlice>;
 /**
  * Component for "HeaderSection" Slices.
  */
+
 const HeaderSection = ({ slice }: HeaderSectionProps): JSX.Element => {
   return (
     <section
@@ -29,7 +29,7 @@ const HeaderSection = ({ slice }: HeaderSectionProps): JSX.Element => {
             {slice.primary.company_name}
           </h2>
 
-          <h1 className="text-3xl font-primary lg:text-6xl">
+          <div className="text-3xl font-primary lg:text-6xl">
             <PrismicRichText
               field={slice.primary.sub_title}
               components={{
@@ -40,7 +40,7 @@ const HeaderSection = ({ slice }: HeaderSectionProps): JSX.Element => {
                 ),
               }}
             />
-          </h1>
+          </div>
         </div>
 
         <ul className="flex flex-col gap-2">
@@ -49,7 +49,7 @@ const HeaderSection = ({ slice }: HeaderSectionProps): JSX.Element => {
           ))}
         </ul>
 
-        <div className="flex flex-row items-center gap-4 ">
+        <div className="flex flex-row items-center gap-4">
           <Button
             href={slice.primary.button_link_1}
             styles="primary"
