@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef, useState } from "react";
 import Input from "./Input";
-import emailjs from "@emailjs/browser";
+//import emailjs from "@emailjs/browser";
 
 const ContactForm = () => {
   const [name, setName] = useState("");

@@ -9,13 +9,13 @@ import List from "@/components/List";
 import TextCard from "@/components/TextCard";
 import Button from "@/components/Button";
 /**
- * Props for `HeaderSection`.
+ * Props for HeaderSection.
  */
-export type HeaderSectionProps =
-  SliceComponentProps<Content.HeaderSectionSlice>;
+export type HeaderSectionProps = SliceComponentProps<Content.HeaderSectionSlice>;
 /**
  * Component for "HeaderSection" Slices.
  */
+
 const HeaderSection = ({ slice }: HeaderSectionProps): JSX.Element => {
   return (
     <section
@@ -29,19 +29,18 @@ const HeaderSection = ({ slice }: HeaderSectionProps): JSX.Element => {
             {slice.primary.company_name}
           </h2>
 
-          <PrismicRichText
-            field={slice.primary.sub_title}
-            components={{
-              strong: ({ children }) => (
-                <span className="text-primary-main font-bold">{children}</span>
-              ),
-              heading1: ({ children }) => (
-                <h1 className="text-3xl font-primary lg:text-6xl">
-                  {children}
-                </h1>
-              ),
-            }}
-          />
+          <div className="text-3xl font-primary lg:text-6xl">
+            <PrismicRichText
+              field={slice.primary.sub_title}
+              components={{
+                strong: ({ children }) => (
+                  <span className="text-primary-main font-bold">
+                    {children}
+                  </span>
+                ),
+              }}
+            />
+          </div>
         </div>
 
         <ul className="flex flex-col gap-2">
@@ -50,7 +49,7 @@ const HeaderSection = ({ slice }: HeaderSectionProps): JSX.Element => {
           ))}
         </ul>
 
-        <div className="flex flex-row items-center gap-4 ">
+        <div className="flex flex-row items-center gap-4">
           <Button
             href={slice.primary.button_link_1}
             styles="primary"
@@ -71,7 +70,7 @@ const HeaderSection = ({ slice }: HeaderSectionProps): JSX.Element => {
         />
       </div>
 
-      <div className="flex flex-col gap-5 justify-between md:flex-row">
+      <div className="flex flex-col gap-12 justify-between md:flex-row mb-8">
         <PrismicNextImage
           field={slice.primary.image_1}
           className="w-full md:w-[48%] lg:w-[32%]"
